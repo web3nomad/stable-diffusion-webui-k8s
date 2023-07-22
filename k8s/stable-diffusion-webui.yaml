@@ -15,12 +15,12 @@ spec:
     spec:
       containers:
       - name: stable-diffusion-webui
-        image: ghcr.io/web3nomad/stable-diffusion-webui:latest-gpu
+        image: ghcr.io/web3nomad/stable-diffusion-webui:gpu-latest
         ports:
         - containerPort: 7860
         env:
         - name: CLI_ARGS
-          value: --no-half --precision full --allow-code --enable-insecure-extension-access --api
+          value: --allow-code --medvram --xformers --enable-insecure-extension-access --api
         resources: {}
         # resources:
         #   requests:

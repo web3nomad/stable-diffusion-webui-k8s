@@ -1,0 +1,33 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  labels:
+    app: stable-diffusion-webui-download-job
+  name: stable-diffusion-webui-download-job
+  namespace: stable-diffusion
+spec:
+  template:
+    metadata:
+      labels:
+        app: stable-diffusion-webui-download-job
+    spec:
+      containers:
+      - name: stable-diffusion-webui-download-job
+        image: ghcr.io/web3nomad/stable-diffusion-webui:dl-latest
+        env:
+        - name: all_proxy
+          value: socks5://heyshop:wedfairy@proxy.heidianer.com:1080
+        volumeMounts:
+        - mountPath: /data
+          name: data-root
+      restartPolicy: OnFailure
+      volumes:
+      - name: data-root
+        hostPath:
+          path: /data/stable-diffusion-webui
+          type: DirectoryOrCreate
+      tolerations:
+      - key: "sku"
+        operator: "Equal"
+        value: "gpu"
+        effect: "NoSchedule"
