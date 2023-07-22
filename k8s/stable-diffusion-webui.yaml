@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stable-diffusion-webui
+  namespace: stable-diffusion
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stable-diffusion-webui
+  template:
+    metadata:
+      labels:
+        app: stable-diffusion-webui
+    spec:
+      containers:
+      - name: stable-diffusion-webui
+        image: ghcr.io/web3nomad/stable-diffusion-webui:latest-gpu
+        ports:
+        - containerPort: 7860
+        env:
+        - name: CLI_ARGS
+          value: --no-half --precision full --allow-code --enable-insecure-extension-access --api
+        resources: {}
+        # resources:
+        #   requests:
+        #     cpu: 1000m
+        #     memory: 4Gi
+        #     nvidia.com/gpu: "1"
+        #   limits:
+        #     cpu: 4000m
+        #     memory: 16Gi
+        #     nvidia.com/gpu: "1"
+        volumeMounts:
+        - mountPath: /data
+          name: data-root
+      volumes:
+      - name: data-root
+        hostPath:
+          path: /data/stable-diffusion-webui
+          type: DirectoryOrCreate
+      tolerations:
+      - key: "sku"
+        operator: "Equal"
+        value: "gpu"
+        effect: "NoSchedule"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: stable-diffusion-webui-svc
+  namespace: stable-diffusion
+spec:
+  ports:
+  - port: 7860
+    targetPort: 7860
+  selector:
+    app: stable-diffusion-webui
+  type: ClusterIP

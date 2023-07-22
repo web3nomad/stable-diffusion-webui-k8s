@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: stable-diffusion-webui-ingress
+  namespace: stable-diffusion
+  annotations:
+    kubernetes.io/ingress.class: azure/application-gateway
+spec:
+  tls:
+  - secretName: wildcard-webui-museai-cc
+  rules:
+  - host: 1.webui.museai.cc
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: stable-diffusion-webui-svc
+            port:
+              number: 7860
