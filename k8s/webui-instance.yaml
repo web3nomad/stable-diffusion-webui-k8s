@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: stable-diffusion-webui
+  name: webui
   namespace: stable-diffusion
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: stable-diffusion-webui
+      app: webui
   template:
     metadata:
       labels:
-        app: stable-diffusion-webui
+        app: webui
     spec:
       containers:
-      - name: stable-diffusion-webui
+      - name: webui
         image: ghcr.io/web3nomad/stable-diffusion-webui:gpu-latest
         ports:
         - containerPort: 7860
@@ -48,12 +48,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: stable-diffusion-webui-svc
+  name: webui-svc
   namespace: stable-diffusion
 spec:
   ports:
   - port: 7860
     targetPort: 7860
   selector:
-    app: stable-diffusion-webui
+    app: webui
   type: ClusterIP
