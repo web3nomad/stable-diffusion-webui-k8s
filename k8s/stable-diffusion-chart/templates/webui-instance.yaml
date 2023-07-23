@@ -35,12 +35,12 @@ spec:
         #     nvidia.com/gpu: "1"
         volumeMounts:
         - mountPath: /data
-          name: data-root
+          name: pvc-data-root
+          subPath: stable-diffusion-webui
       volumes:
-      - name: data-root
-        hostPath:
-          path: /data/stable-diffusion-webui
-          type: DirectoryOrCreate
+      - name: pvc-data-root
+        persistentVolumeClaim:
+          claimName: azure-managed-disk
       tolerations:
       - key: "sku"
         operator: "Equal"

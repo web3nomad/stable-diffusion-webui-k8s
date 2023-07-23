@@ -19,13 +19,13 @@ spec:
           value: socks5://heyshop:wedfairy@proxy.heidianer.com:1080
         volumeMounts:
         - mountPath: /data
-          name: data-root
+          name: pvc-data-root
+          subPath: stable-diffusion-webui
       restartPolicy: OnFailure
       volumes:
-      - name: data-root
-        hostPath:
-          path: /data/stable-diffusion-webui
-          type: DirectoryOrCreate
+      - name: pvc-data-root
+        persistentVolumeClaim:
+          claimName: azure-managed-disk
       tolerations:
       - key: "sku"
         operator: "Equal"
