@@ -1,0 +1,10 @@
+
+tlsSecret:
+  # enabled: true
+  secrets:
+    - name: wildcard-webui-museai-cc
+      key: ssl/wildcard-webui-museai-cc-privkey.pem
+      crt: ssl/wildcard-webui-museai-cc-fullchain.pem
+
+webui:
+  instances: 3

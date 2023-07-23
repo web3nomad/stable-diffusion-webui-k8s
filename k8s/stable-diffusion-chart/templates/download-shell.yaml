@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: download-shell
+  namespace: stable-diffusion
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: download-shell
+  template:
+    metadata:
+      labels:
+        app: download-shell
+    spec:
+      containers:
+      - name: webui-dl
+        image: ghcr.io/web3nomad/stable-diffusion-webui:dl-latest
+        env:
+        - name: all_proxy
+          value: socks5://heyshop:wedfairy@proxy.heidianer.com:1080
+        command: ["/bin/sh"]
+        args: ["-c", "sleep 3600"]
+        resources: {}
+        volumeMounts:
+        - mountPath: /data
+          name: data-root
+      volumes:
+      - name: data-root
+        hostPath:
+          path: /data/stable-diffusion-webui
+          type: DirectoryOrCreate
+      tolerations:
+      - key: "sku"
+        operator: "Equal"
+        value: "gpu"
+        effect: "NoSchedule"
