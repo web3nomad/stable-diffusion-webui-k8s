@@ -24,15 +24,14 @@ spec:
         - name: CLI_ARGS
           value: --allow-code --medvram --xformers --enable-insecure-extension-access --api
         resources: {}
-        # resources:
-        #   requests:
-        #     cpu: 1000m
-        #     memory: 4Gi
-        #     nvidia.com/gpu: "1"
-        #   limits:
-        #     cpu: 4000m
-        #     memory: 16Gi
-        #     nvidia.com/gpu: "1"
+        resources:
+          requests:
+            cpu: 250m
+            memory: 500Mi
+          limits:
+            cpu: 2000m
+            memory: 16Gi
+            # "nvidia.com/gpu": 1  # 不能加这个, 不然会导致 requests 必须是 1, 这样就启动不起来了
         volumeMounts:
         - mountPath: /data
           name: pvc-data-root
