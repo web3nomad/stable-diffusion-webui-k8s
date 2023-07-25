@@ -1,3 +1,4 @@
+{{- $imageTag  := .Values.webui.imageTag -}}
 {{ range $i, $e := until (int .Values.webui.instances) }}
 ---
 apiVersion: apps/v1
@@ -17,7 +18,7 @@ spec:
     spec:
       containers:
       - name: webui
-        image: ghcr.io/web3nomad/stable-diffusion-webui:gpu-latest
+        image: ghcr.io/web3nomad/stable-diffusion-webui:{{ $imageTag }}
         ports:
         - containerPort: 7860
         env:

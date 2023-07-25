@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: webui-dl
-        image: ghcr.io/web3nomad/stable-diffusion-webui:dl-latest
+        image: ghcr.io/web3nomad/stable-diffusion-webui:{{ .Values.webui.imageTag }}
         env:
         - name: all_proxy
           value: socks5://heyshop:wedfairy@proxy.heidianer.com:1080
