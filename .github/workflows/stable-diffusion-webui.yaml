@@ -90,14 +90,3 @@ jobs:
           ghcr.io/web3nomad/stable-diffusion-webui:gpu-latest
           ghcr.io/web3nomad/stable-diffusion-webui:gpu-${{ steps.vars.outputs.git_hash }}
         platforms: linux/amd64
-
-    - name: Build and push Download Script
-      uses: docker/build-push-action@v4
-      with:
-        context: ./services/download
-        file: ./services/download/Dockerfile
-        push: true
-        tags: |
-          ghcr.io/web3nomad/stable-diffusion-webui:dl-latest
-          ghcr.io/web3nomad/stable-diffusion-webui:dl-${{ steps.vars.outputs.git_hash }}
-        platforms: linux/amd64
