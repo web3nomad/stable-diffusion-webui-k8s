@@ -1,0 +1,89 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: download-server
+  namespace: stable-diffusion
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: download-server
+  template:
+    metadata:
+      labels:
+        app: download-server
+    spec:
+      containers:
+      - name: webui-dl
+        image: ghcr.io/web3nomad/stable-diffusion-webui/dl-server:{{ .Values.webui.imageTagDL }}
+        lifecycle:
+          preStart:
+            exec:
+              command:
+              - /bin/sh
+              - -c
+              - |
+                echo '@app.get("/")' >> /app/main.py
+                echo 'def ping():' >> /app/main.py
+                echo '    return "success"' >> /app/main.py
+        command:
+        - /bin/sh
+        args:
+        - -c
+        - |
+          echo '@app.get("/")' >> /app/main.py
+          echo 'def ping():' >> /app/main.py
+          echo '    return "success"' >> /app/main.py
+          uvicorn main:app --host 0.0.0.0 --reload --port 8000
+        ports:
+        - containerPort: 8000
+        resources: {}
+        volumeMounts:
+        - mountPath: /app/data
+          name: pvc-data-root
+          subPath: stable-diffusion-webui
+      volumes:
+      - name: pvc-data-root
+        persistentVolumeClaim:
+          claimName: azure-managed-disk
+      tolerations:
+      - key: "sku"
+        operator: "Equal"
+        value: "gpu"
+        effect: "NoSchedule"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: download-server-svc
+  namespace: stable-diffusion
+spec:
+  ports:
+  - port: 8000
+    targetPort: 8000
+  selector:
+    app: download-server
+  type: ClusterIP
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: download-server-ingress
+  namespace: stable-diffusion
+  annotations:
+    kubernetes.io/ingress.class: azure/application-gateway
+    appgw.ingress.kubernetes.io/request-timeout: "600"
+spec:
+  tls:
+  - secretName: wildcard-webui-museai-cc
+  rules:
+  - host: dl.webui.museai.cc
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: download-server-svc
+            port:
+              number: 8000

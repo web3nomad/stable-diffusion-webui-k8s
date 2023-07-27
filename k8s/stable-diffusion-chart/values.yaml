@@ -8,5 +8,5 @@ tlsSecret:
 
 webui:
   instances: 3
-  imageTag: gpu-5b07af5
-  imageTagDL: dl-5b07af5
+  imageTag: gpu-069cf0b
+  imageTagDL: d6b9694

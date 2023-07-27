@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: download-shell
+  name: download-script
   namespace: stable-diffusion
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: download-shell
+      app: download-script
   template:
     metadata:
       labels:
-        app: download-shell
+        app: download-script
     spec:
       containers:
       - name: webui-dl
-        image: ghcr.io/web3nomad/stable-diffusion-webui:{{ .Values.webui.imageTag }}
+        image: ghcr.io/web3nomad/stable-diffusion-webui/dl-script:{{ .Values.webui.imageTagDL }}
         env:
         - name: all_proxy
           value: socks5://heyshop:wedfairy@proxy.heidianer.com:1080
