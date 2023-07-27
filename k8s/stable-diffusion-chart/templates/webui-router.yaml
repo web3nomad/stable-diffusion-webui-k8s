@@ -1,21 +1,36 @@
+# config map for a yaml file
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: webui-router-config
+  namespace: stable-diffusion
+data:
+  config.yml: |-
+    pool:
+      res_host_list:
+  {{- range $i, $e := until (int .Values.webui.instances) }}
+        - webui-svc-{{ $i }}:7860
+  {{ end }}
+      max_running_timeout: 600
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: download-server
+  name: webui-router
   namespace: stable-diffusion
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: download-server
+      app: webui-router
   template:
     metadata:
       labels:
-        app: download-server
+        app: webui-router
     spec:
       containers:
-      - name: download-server
-        image: ghcr.io/web3nomad/stable-diffusion-webui/dl-server:{{ .Values.webui.imageTagDL }}
+      - name: webui-router
+        image: ghcr.io/web3nomad/stable-diffusion-webui/webui-router:{{ .Values.webui.imageTagRouter }}
         command:
         - /bin/sh
         args:
@@ -24,6 +39,7 @@ spec:
           echo '@app.get("/")' >> /app/main.py
           echo 'def ping():' >> /app/main.py
           echo '    return "success"' >> /app/main.py
+          sed -i '245i\    return True' /app/app/core/pool.py
           uvicorn main:app --host 0.0.0.0 --reload --port 8000
         ports:
         - containerPort: 8000
@@ -32,10 +48,18 @@ spec:
         - mountPath: /app/data
           name: pvc-data-root
           subPath: stable-diffusion-webui
+        - mountPath: /app/config.yml
+          name: config
+          subPath: config.yml
+          readOnly: true
       volumes:
       - name: pvc-data-root
         persistentVolumeClaim:
           claimName: azure-managed-disk
+      - configMap:
+          defaultMode: 420
+          name: webui-router-config
+        name: config
       tolerations:
       - key: "sku"
         operator: "Equal"
@@ -45,20 +69,20 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: download-server-svc
+  name: webui-router-svc
   namespace: stable-diffusion
 spec:
   ports:
   - port: 8000
     targetPort: 8000
   selector:
-    app: download-server
+    app: webui-router
   type: ClusterIP
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: download-server-ingress
+  name: webui-router-ingress
   namespace: stable-diffusion
   annotations:
     kubernetes.io/ingress.class: azure/application-gateway
@@ -67,13 +91,13 @@ spec:
   tls:
   - secretName: wildcard-webui-museai-cc
   rules:
-  - host: dl.webui.museai.cc
+  - host: router.webui.museai.cc
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: download-server-svc
+            name: webui-router-svc
             port:
               number: 8000

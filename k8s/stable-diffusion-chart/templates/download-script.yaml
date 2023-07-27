@@ -14,7 +14,7 @@ spec:
         app: download-script
     spec:
       containers:
-      - name: webui-dl
+      - name: download-script
         image: ghcr.io/web3nomad/stable-diffusion-webui/dl-script:{{ .Values.webui.imageTagDL }}
         env:
         - name: all_proxy
