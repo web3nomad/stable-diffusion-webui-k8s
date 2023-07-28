@@ -46,26 +46,17 @@ spec:
         - containerPort: 8000
         resources: {}
         volumeMounts:
-        - mountPath: /app/data
-          name: pvc-data-root
-          subPath: stable-diffusion-webui
         - mountPath: /app/config.yml
           name: config
           subPath: config.yml
           readOnly: true
       volumes:
-      - name: pvc-data-root
-        persistentVolumeClaim:
-          claimName: azure-managed-disk
       - configMap:
           defaultMode: 420
           name: webui-router-config
         name: config
-      tolerations:
-      - key: "sku"
-        operator: "Equal"
-        value: "gpu"
-        effect: "NoSchedule"
+      nodeSelector:
+        agentpool: cpupool1
 ---
 apiVersion: v1
 kind: Service

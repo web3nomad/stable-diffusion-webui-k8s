@@ -16,9 +16,9 @@ spec:
       containers:
       - name: download-script
         image: ghcr.io/web3nomad/stable-diffusion-webui/dl-script:{{ .Values.webui.imageTagDL }}
-        env:
-        - name: all_proxy
-          value: socks5://heyshop:wedfairy@proxy.heidianer.com:1080
+        # env:
+        # - name: all_proxy
+        #   value: socks5://heyshop:wedfairy@proxy.heidianer.com:1080
         command: ["/bin/sh"]
         args: ["-c", "sleep 3600"]
         resources: {}
@@ -26,19 +26,11 @@ spec:
         - mountPath: /data
           name: azure-file-data-root
           subPath: stable-diffusion-webui
-        - mountPath: /mnt/azure-disk
-          name: azure-disk-data-root
+        - mountPath: /mnt/azure
+          name: azure-file-data-root
       volumes:
       - name: azure-file-data-root
         persistentVolumeClaim:
           claimName: azure-file
-      - name: azure-disk-data-root
-        persistentVolumeClaim:
-          claimName: azure-managed-disk
-      tolerations:
-      - key: "sku"
-        operator: "Equal"
-        value: "gpu"
-        effect: "NoSchedule"
       nodeSelector:
-        accelerator: nvidia
+        agentpool: cpupool1

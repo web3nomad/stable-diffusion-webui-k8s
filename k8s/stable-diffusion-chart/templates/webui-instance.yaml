@@ -28,24 +28,27 @@ spec:
         resources:
           requests:
             cpu: 250m
-            memory: 500Mi
+            memory: 512Mi
           limits:
             cpu: 2000m
             memory: 16Gi
-            # "nvidia.com/gpu": 1  # 不能加这个, 不然会导致 requests 必须是 1, 这样就启动不起来了
+            "nvidia.com/gpu": 1  # 节点不够的时候不能加这个, 不然会导致 requests 必须是 1, 这样就启动不起来了
         volumeMounts:
         - mountPath: /data
-          name: pvc-data-root
+          name: azure-file-data-root
           subPath: stable-diffusion-webui
       volumes:
-      - name: pvc-data-root
+      - name: azure-file-data-root
         persistentVolumeClaim:
-          claimName: azure-managed-disk
+          claimName: azure-file
       tolerations:
       - key: "sku"
         operator: "Equal"
         value: "gpu"
         effect: "NoSchedule"
+      nodeSelector:
+        agentpool: gpupool1
+        accelerator: nvidia
 ---
 apiVersion: v1
 kind: Service

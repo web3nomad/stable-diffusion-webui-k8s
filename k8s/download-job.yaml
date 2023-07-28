@@ -31,3 +31,5 @@ spec:
         operator: "Equal"
         value: "gpu"
         effect: "NoSchedule"
+      nodeSelector:
+        agentpool: gpupool1

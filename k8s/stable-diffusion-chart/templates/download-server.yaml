@@ -30,17 +30,14 @@ spec:
         resources: {}
         volumeMounts:
         - mountPath: /app/data
-          name: pvc-data-root
+          name: azure-file-data-root
           subPath: stable-diffusion-webui
       volumes:
-      - name: pvc-data-root
+      - name: azure-file-data-root
         persistentVolumeClaim:
-          claimName: azure-managed-disk
-      tolerations:
-      - key: "sku"
-        operator: "Equal"
-        value: "gpu"
-        effect: "NoSchedule"
+          claimName: azure-file
+      nodeSelector:
+        agentpool: cpupool1
 ---
 apiVersion: v1
 kind: Service
