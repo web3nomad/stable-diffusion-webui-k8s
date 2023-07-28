@@ -1,16 +1,50 @@
-https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned-emaonly.ckpt
-  out=Stable-diffusion/v1-5-pruned-emaonly.ckpt
 https://huggingface.co/stabilityai/sd-vae-ft-mse-original/resolve/main/vae-ft-mse-840000-ema-pruned.ckpt
-  out=VAE/vae-ft-mse-840000-ema-pruned.ckpt
-https://huggingface.co/runwayml/stable-diffusion-inpainting/resolve/main/sd-v1-5-inpainting.ckpt
-  out=Stable-diffusion/sd-v1-5-inpainting.ckpt
+  out=models/VAE/vae-ft-mse-840000-ema-pruned.ckpt
 https://github.com/TencentARC/GFPGAN/releases/download/v1.3.4/GFPGANv1.4.pth
-  out=GFPGAN/GFPGANv1.4.pth
+  out=models/GFPGAN/GFPGANv1.4.pth
 https://github.com/xinntao/Real-ESRGAN/releases/download/v0.1.0/RealESRGAN_x4plus.pth
-  out=RealESRGAN/RealESRGAN_x4plus.pth
+  out=models/RealESRGAN/RealESRGAN_x4plus.pth
 https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.2.4/RealESRGAN_x4plus_anime_6B.pth
-  out=RealESRGAN/RealESRGAN_x4plus_anime_6B.pth
+  out=models/RealESRGAN/RealESRGAN_x4plus_anime_6B.pth
 https://heibox.uni-heidelberg.de/f/31a76b13ea27482981b4/?dl=1
-  out=LDSR/project.yaml
+  out=models/LDSR/project.yaml
 https://heibox.uni-heidelberg.de/f/578df07c8fc04ffbadf3/?dl=1
-  out=LDSR/model.ckpt
+  out=models/LDSR/model.ckpt
+
+#   checkpoints
+https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned-emaonly.safetensors
+  out=models/Stable-diffusion/v1-5-pruned-emaonly.safetensors
+https://huggingface.co/Lykon/DreamShaper/resolve/main/DreamShaper_6_BakedVae.safetensors
+  out=models/Stable-diffusion/DreamShaper_6_BakedVae.safetensors
+
+#  Lora
+https://huggingface.co/OedoSoldier/detail-tweaker-lora/resolve/main/add_detail.safetensors
+  out=models/Lora/add_detail.safetensors
+
+#   controlNet models
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11e_sd15_ip2p.pth
+	out=config/auto/extensions/sd-webui-controlnet/models/control_v11e_sd15_ip2p.pth
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11e_sd15_shuffle.pth
+	out=config/auto/extensions/sd-webui-controlnet/models/control_v11e_sd15_shuffle.pth
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1e_sd15_tile.pth
+	out=config/auto/extensions/sd-webui-controlnet/models/control_v11f1e_sd15_tile.pth
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1p_sd15_depth.pth
+	out=config/auto/extensions/sd-webui-controlnet/models/control_v11f1p_sd15_depth.pth
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_canny.pth
+	out=config/auto/extensions/sd-webui-controlnet/models/control_v11p_sd15_canny.pth
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_inpaint.pth
+	out=config/auto/extensions/sd-webui-controlnet/models/control_v11p_sd15_inpaint.pth
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_lineart.pth
+	out=config/auto/extensions/sd-webui-controlnet/models/control_v11p_sd15_lineart.pth
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_mlsd.pth
+	out=config/auto/extensions/sd-webui-controlnet/models/control_v11p_sd15_mlsd.pth
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_normalbae.pth
+	out=config/auto/extensions/sd-webui-controlnet/models/control_v11p_sd15_normalbae.pth
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_openpose.pth
+	out=config/auto/extensions/sd-webui-controlnet/models/control_v11p_sd15_openpose.pth
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_scribble.pth
+	out=config/auto/extensions/sd-webui-controlnet/models/control_v11p_sd15_scribble.pth
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_seg.pth
+	out=config/auto/extensions/sd-webui-controlnet/models/control_v11p_sd15_seg.pth
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_softedge.pth
+	out=config/auto/extensions/sd-webui-controlnet/models/control_v11p_sd15_softedge.pth

@@ -11,11 +11,19 @@ mkdir -vp /data/.cache \
   /data/models/GFPGAN \
   /data/models/RealESRGAN \
   /data/models/LDSR \
-  /data/models/VAE
+  /data/models/VAE \
+  /data/models/ControlNet \
+  /data/config/auto/extensions
 
 echo "Downloading, this might take a while..."
 
-aria2c -x 10 --disable-ipv6 --input-file /docker/links.txt --dir /data/models --continue
+echo 'git clone start-------------'
+# 如果不存在sd-webui-controlnet 就clone
+if [ ! -d "/data/config/auto/extensions/sd-webui-controlnet" ]; then
+  git clone https://github.com/Mikubill/sd-webui-controlnet.git /data/config/auto/extensions/sd-webui-controlnet/
+fi
+
+aria2c -x 10 --disable-ipv6 --input-file /docker/links.txt --dir /data --continue
 
 echo "Checking SHAs..."
 
