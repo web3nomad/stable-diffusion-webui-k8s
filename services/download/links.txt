@@ -11,17 +11,19 @@ https://heibox.uni-heidelberg.de/f/31a76b13ea27482981b4/?dl=1
 https://heibox.uni-heidelberg.de/f/578df07c8fc04ffbadf3/?dl=1
   out=models/LDSR/model.ckpt
 
-#   checkpoints
+# checkpoints
+https://huggingface.co/runwayml/stable-diffusion-inpainting/resolve/main/sd-v1-5-inpainting.ckpt
+  out=models/Stable-diffusion/sd-v1-5-inpainting.ckpt
 https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned-emaonly.safetensors
   out=models/Stable-diffusion/v1-5-pruned-emaonly.safetensors
 https://huggingface.co/Lykon/DreamShaper/resolve/main/DreamShaper_6_BakedVae.safetensors
   out=models/Stable-diffusion/DreamShaper_6_BakedVae.safetensors
 
-#  Lora
+# Lora
 https://huggingface.co/OedoSoldier/detail-tweaker-lora/resolve/main/add_detail.safetensors
   out=models/Lora/add_detail.safetensors
 
-#   controlNet models
+# controlNet models
 https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11e_sd15_ip2p.pth
 	out=config/auto/extensions/sd-webui-controlnet/models/control_v11e_sd15_ip2p.pth
 https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11e_sd15_shuffle.pth
