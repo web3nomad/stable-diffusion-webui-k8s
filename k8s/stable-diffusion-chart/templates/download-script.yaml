@@ -23,19 +23,16 @@ spec:
         args: ["-c", "sleep 3600"]
         resources: {}
         volumeMounts:
-        - mountPath: /data-host
-          name: host-data-root
         - mountPath: /data
-          name: pvc-data-root
+          name: azure-file-data-root
           subPath: stable-diffusion-webui
-        - mountPath: /mnt/azire
-          name: pvc-data-root
+        - mountPath: /mnt/azure-disk
+          name: azure-disk-data-root
       volumes:
-      - name: host-data-root
-        hostPath:
-          path: /data/stable-diffusion-webui
-          type: DirectoryOrCreate
-      - name: pvc-data-root
+      - name: azure-file-data-root
+        persistentVolumeClaim:
+          claimName: azure-file
+      - name: azure-disk-data-root
         persistentVolumeClaim:
           claimName: azure-managed-disk
       tolerations:
@@ -43,3 +40,5 @@ spec:
         operator: "Equal"
         value: "gpu"
         effect: "NoSchedule"
+      nodeSelector:
+        accelerator: nvidia

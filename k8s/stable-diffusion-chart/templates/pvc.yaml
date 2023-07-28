@@ -10,3 +10,15 @@ spec:
   resources:
     requests:
       storage: 1000Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: azure-file
+spec:
+  accessModes:
+  - ReadWriteMany
+  storageClassName: azurefile-csi-premium
+  resources:
+    requests:
+      storage: 1000Gi
