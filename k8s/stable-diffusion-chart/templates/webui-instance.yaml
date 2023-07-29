@@ -30,8 +30,8 @@ spec:
             cpu: 250m
             memory: 512Mi
           limits:
-            cpu: 2000m
-            memory: 16Gi
+            cpu: 4000m
+            memory: 64Gi
             "nvidia.com/gpu": 1  # 节点不够的时候不能加这个, 不然会导致 requests 必须是 1, 这样就启动不起来了
         volumeMounts:
         - mountPath: /data

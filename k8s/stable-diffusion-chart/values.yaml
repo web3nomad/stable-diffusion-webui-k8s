@@ -7,7 +7,7 @@ tlsSecret:
       crt: ssl/wildcard-webui-museai-cc-fullchain.pem
 
 webui:
-  instances: 2
+  instances: 3
   imageTag: gpu-069cf0b
-  imageTagDL: e2dde5e
+  imageTagDL: 5aab064
   imageTagRouter: 083796b
