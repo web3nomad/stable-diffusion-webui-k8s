@@ -27,7 +27,13 @@ spec:
           uvicorn main:app --host 0.0.0.0 --reload --port 8000
         ports:
         - containerPort: 8000
-        resources: {}
+        resources:
+          requests:
+            cpu: 250m
+            memory: 512Mi
+          limits:
+            cpu: 1000m
+            memory: 32Gi
         volumeMounts:
         - mountPath: /app/data
           name: azure-file-data-root
@@ -36,8 +42,14 @@ spec:
       - name: azure-file-data-root
         persistentVolumeClaim:
           claimName: azure-file
+      tolerations:
+      - key: "sku"
+        operator: "Equal"
+        value: "gpu"
+        effect: "NoSchedule"
       nodeSelector:
-        agentpool: cpupool1
+        agentpool: gpupool1
+        accelerator: nvidia
 ---
 apiVersion: v1
 kind: Service
