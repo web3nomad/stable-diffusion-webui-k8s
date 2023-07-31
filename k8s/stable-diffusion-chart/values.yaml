@@ -10,4 +10,4 @@ webui:
   instances: 3
   imageTag: gpu-069cf0b
   imageTagDL: 5aab064
-  imageTagRouter: 083796b
+  imageTagRouter: 5c3d0e0
