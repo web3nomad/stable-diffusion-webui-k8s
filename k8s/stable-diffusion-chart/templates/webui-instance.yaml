@@ -23,7 +23,7 @@ spec:
         - containerPort: 7860
         env:
         - name: CLI_ARGS
-          value: --allow-code --medvram --xformers --enable-insecure-extension-access --api
+          value: --no-half --allow-code --medvram --xformers --enable-insecure-extension-access --api
         resources: {}
         resources:
           requests:
