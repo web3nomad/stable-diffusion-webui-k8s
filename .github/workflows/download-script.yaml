@@ -1,4 +1,4 @@
-name: WebUI Router
+name: File Download Script
 
 on: workflow_dispatch
 
@@ -29,13 +29,13 @@ jobs:
         echo "build_date=$build_date" >> $GITHUB_OUTPUT
         echo "build_version=$build_version" >> $GITHUB_OUTPUT
 
-    - name: Build and push WebUI Router
+    - name: Build and push File Download Script
       uses: docker/build-push-action@v4
       with:
-        context: ./services/webui-router
-        file: ./services/webui-router/Dockerfile
+        context: ./services/download-script
+        file: ./services/download-script/Dockerfile
         push: true
         tags: |
-          ghcr.io/bmrlab/stable-diffusion-webui/webui-router:latest
-          ghcr.io/bmrlab/stable-diffusion-webui/webui-router:${{ steps.vars.outputs.build_version }}
+          ghcr.io/bmrlab/stable-diffusion-webui/dl-script:latest
+          ghcr.io/bmrlab/stable-diffusion-webui/dl-script:${{ steps.vars.outputs.build_version }}
         platforms: linux/amd64

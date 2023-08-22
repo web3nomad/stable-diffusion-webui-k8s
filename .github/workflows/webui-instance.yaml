@@ -1,4 +1,4 @@
-name: Stable Diffusion WebUI
+name: Stable Diffusion WebUI Instance
 
 # on:
 #   push:
@@ -86,7 +86,7 @@ jobs:
         file: ./services/AUTOMATIC1111/Dockerfile
         push: true
         tags: |
-          ghcr.io/web3nomad/stable-diffusion-webui:latest
-          ghcr.io/web3nomad/stable-diffusion-webui:gpu-latest
-          ghcr.io/web3nomad/stable-diffusion-webui:gpu-${{ steps.vars.outputs.git_hash }}
+          ghcr.io/bmrlab/stable-diffusion-webui:latest
+          ghcr.io/bmrlab/stable-diffusion-webui:gpu-latest
+          ghcr.io/bmrlab/stable-diffusion-webui:gpu-${{ steps.vars.outputs.git_hash }}
         platforms: linux/amd64

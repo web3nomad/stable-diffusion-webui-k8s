@@ -1,4 +1,4 @@
-name: File Download Service
+name: File Download Server
 
 on: workflow_dispatch
 
@@ -29,24 +29,13 @@ jobs:
         echo "build_date=$build_date" >> $GITHUB_OUTPUT
         echo "build_version=$build_version" >> $GITHUB_OUTPUT
 
-    - name: Build and push File Download Script
-      uses: docker/build-push-action@v4
-      with:
-        context: ./services/download
-        file: ./services/download/Dockerfile
-        push: true
-        tags: |
-          ghcr.io/web3nomad/stable-diffusion-webui/dl-script:latest
-          ghcr.io/web3nomad/stable-diffusion-webui/dl-script:${{ steps.vars.outputs.build_version }}
-        platforms: linux/amd64
-
     - name: Build and push File Download Server
       uses: docker/build-push-action@v4
       with:
-        context: ./services/file-downloader
-        file: ./services/file-downloader/Dockerfile
+        context: ./services/download-server
+        file: ./services/download-server/Dockerfile
         push: true
         tags: |
-          ghcr.io/web3nomad/stable-diffusion-webui/dl-server:latest
-          ghcr.io/web3nomad/stable-diffusion-webui/dl-server:${{ steps.vars.outputs.build_version }}
+          ghcr.io/bmrlab/stable-diffusion-webui/dl-server:latest
+          ghcr.io/bmrlab/stable-diffusion-webui/dl-server:${{ steps.vars.outputs.build_version }}
         platforms: linux/amd64
