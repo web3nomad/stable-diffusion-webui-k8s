@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: download-script
-        image: ghcr.io/web3nomad/stable-diffusion-webui/dl-script:{{ .Values.webui.imageTagDL }}
+        image: ghcr.io/bmrlab/stable-diffusion-webui/dl-script:{{ .Values.webui.images.downloadScript }}
         # env:
         # - name: all_proxy
         #   value: socks5://heyshop:wedfairy@proxy.heidianer.com:1080

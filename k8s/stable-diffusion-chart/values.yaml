@@ -8,6 +8,8 @@ tlsSecret:
 
 webui:
   instances: 3
-  imageTag: gpu-069cf0b
-  imageTagDL: 5aab064
-  imageTagRouter: 5c3d0e0
+  images:
+    webuiInstance: gpu-9ed9b7e
+    webuiRouter: 9ed9b7e
+    downloadScript: 9ed9b7e
+    downloadServer: 9ed9b7e

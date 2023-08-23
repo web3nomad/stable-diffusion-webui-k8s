@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: download-script
-        image: ghcr.io/web3nomad/stable-diffusion-webui/dl-script:5aab064
+        image: ghcr.io/bmrlab/stable-diffusion-webui/dl-script:latest
         volumeMounts:
         - mountPath: /data
           name: azure-file-data-root

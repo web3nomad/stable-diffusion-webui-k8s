@@ -15,16 +15,12 @@ spec:
     spec:
       containers:
       - name: download-server
-        image: ghcr.io/web3nomad/stable-diffusion-webui/dl-server:{{ .Values.webui.imageTagDL }}
+        image: ghcr.io/bmrlab/stable-diffusion-webui/dl-server:{{ .Values.webui.images.downloadServer }}
         command:
         - /bin/sh
         args:
         - -c
-        - |
-          echo '@app.get("/")' >> /app/main.py
-          echo 'def ping():' >> /app/main.py
-          echo '    return "success"' >> /app/main.py
-          uvicorn main:app --host 0.0.0.0 --reload --port 8000
+        - uvicorn main:app --host 0.0.0.0 --reload --port 8000
         ports:
         - containerPort: 8000
         resources:
