@@ -38,14 +38,8 @@ spec:
       - name: azure-file-data-root
         persistentVolumeClaim:
           claimName: azure-file
-      tolerations:
-      - key: "sku"
-        operator: "Equal"
-        value: "gpu"
-        effect: "NoSchedule"
       nodeSelector:
-        agentpool: gpupool1
-        accelerator: nvidia
+        agentpool: cpupool1
 ---
 apiVersion: v1
 kind: Service
@@ -72,7 +66,7 @@ spec:
   tls:
   - secretName: wildcard-webui-museai-cc
   rules:
-  - host: dl.webui.museai.cc
+  - host: dl.{{ .Values.gatewayHost }}
     http:
       paths:
       - path: /

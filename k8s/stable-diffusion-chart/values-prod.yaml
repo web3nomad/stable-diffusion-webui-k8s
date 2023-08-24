@@ -1,0 +1,17 @@
+
+tlsSecret:
+  # enabled: true
+  secrets:
+    - name: wildcard-webui-museai-cc
+      key: ssl/wildcard-webui-museai-cc-privkey.pem
+      crt: ssl/wildcard-webui-museai-cc-fullchain.pem
+
+webui:
+  instances: 3
+  images:
+    webuiInstance: gpu-9ed9b7e
+    webuiRouter: 9ed9b7e
+    downloadScript: 9ed9b7e
+    downloadServer: 9ed9b7e
+
+gatewayHost: webui.museai.cc

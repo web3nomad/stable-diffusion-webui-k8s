@@ -1,3 +1,4 @@
+{{- $gatewayHost  := .Values.gatewayHost -}}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -10,7 +11,7 @@ spec:
   - secretName: wildcard-webui-museai-cc
   rules:
   {{ range $i, $e := until (int .Values.webui.instances) }}
-  - host: {{ $i }}.webui.museai.cc
+  - host: {{ $i }}.{{ $gatewayHost }}
     http:
       paths:
       - path: /

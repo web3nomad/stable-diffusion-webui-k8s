@@ -78,7 +78,7 @@ spec:
   tls:
   - secretName: wildcard-webui-museai-cc
   rules:
-  - host: router.webui.museai.cc
+  - host: router.{{ .Values.gatewayHost }}
     http:
       paths:
       - path: /
