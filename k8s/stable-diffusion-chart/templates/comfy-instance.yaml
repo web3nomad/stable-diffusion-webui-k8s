@@ -21,7 +21,13 @@ spec:
         image: ghcr.io/bmrlab/stable-diffusion-webui/comfy:{{ $imageTag }}
         ports:
         - containerPort: 7860
-        env: []
+        env:
+        - name: https_proxy
+          value: http://sslocal-svc.proxy:3128
+        - name: http_proxy
+          value: http://sslocal-svc.proxy:3128
+        - name: all_proxy
+          value: socks5://sslocal-svc.proxy:1080
         resources: {}
         resources:
           requests:
