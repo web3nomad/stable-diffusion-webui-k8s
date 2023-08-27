@@ -41,3 +41,10 @@ kubectl apply -f download-job.yaml
 cd docker
 ./download.sh
 ```
+
+
+## Proxy
+```shell
+helm install shadowsocks-proxy ./shadowsocks-proxy-chart --values shadowsocks-proxy-chart/values.yaml --values shadowsocks-proxy-chart/secrets.yaml --dry-run
+helm upgrade shadowsocks-proxy ./shadowsocks-proxy-chart --values shadowsocks-proxy-chart/values.yaml --values shadowsocks-proxy-chart/secrets.yaml --dry-run
+```

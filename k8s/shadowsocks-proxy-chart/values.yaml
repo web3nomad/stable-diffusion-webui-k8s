@@ -1,0 +1,7 @@
+
+# Put endpoint secrets in secrets.yaml
+shadowsocksEndpoint:
+  method: ""
+  password: ""
+  server: ""
+  server_port: 0

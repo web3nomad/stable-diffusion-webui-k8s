@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sslocal-config
+  namespace: proxy
+data:
+  config.json: |-
+    {
+      "servers": [
+{{- range .Values.shadowsocksEndpoints }}
+        {
+          "method": {{ .method | default "" | quote }},
+          "password": {{ .password | default "" | quote }},
+          "server": {{ .server | default "" | quote }},
+          "server_port": {{ .server_port | default 0 }}
+        },
+{{- end }}
+      ],
+      "locals": [
+        {
+          "protocol": "http",
+          "local_address": "0.0.0.0",
+          "local_port": 3128,
+          "acl": "/etc/shadowsocks-rust/chn.acl"
+        },
+        {
+          "protocol": "socks",
+          "local_address": "0.0.0.0",
+          "local_port": 1080,
+          "mode": "tcp_only",
+          "acl": "/etc/shadowsocks-rust/chn.acl"
+        }
+      ],
+      "log": {
+        "level": 1
+      }
+    }
+  chn.acl: |-
+{{ .Files.Get "acl/chn.acl" | indent 4 }}
+  gfwlist.acl: |-
+{{ .Files.Get "acl/gfwlist.acl" | indent 4 }}

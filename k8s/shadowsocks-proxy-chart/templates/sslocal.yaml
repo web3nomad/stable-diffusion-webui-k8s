@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sslocal
+  namespace: proxy
+spec:
+  selector:
+    matchLabels:
+      app: sslocal
+  template:
+    metadata:
+      labels:
+        app: sslocal
+    spec:
+      containers:
+      - image: ghcr.io/shadowsocks/sslocal-rust:v1.16.0
+        imagePullPolicy: IfNotPresent
+        name: sslocal
+        ports:
+          - containerPort: 1080
+            protocol: TCP
+          - containerPort: 3128
+            protocol: TCP
+        resources: {}
+        volumeMounts:
+          - mountPath: /etc/shadowsocks-rust
+            name: sslocal-config
+            readOnly: true
+          - mountPath: /usr/local/bin
+            name: plugins
+      volumes:
+      - configMap:
+          defaultMode: 420
+          name: sslocal-config
+        name: sslocal-config
+      - emptyDir: {}
+        name: plugins
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sslocal-svc
+  namespace: proxy
+spec:
+  ports:
+  - name: socks-1080
+    port: 1080
+    targetPort: 1080
+  - name: http-3128
+    port: 3128
+    targetPort: 3128
+  selector:
+    app: sslocal
+  type: ClusterIP
