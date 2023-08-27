@@ -14,4 +14,9 @@ webui:
     downloadScript: 9ed9b7e
     downloadServer: 9ed9b7e
 
+comfy:
+  instances: 1
+  images:
+    comfyInstance: 4da9dd4
+
 gatewayHost: webui.museai.cc

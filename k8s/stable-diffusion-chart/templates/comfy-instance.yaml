@@ -24,10 +24,6 @@ spec:
         env:
         - name: https_proxy
           value: http://sslocal-svc.proxy:3128
-        - name: http_proxy
-          value: http://sslocal-svc.proxy:3128
-        - name: all_proxy
-          value: socks5://sslocal-svc.proxy:1080
         resources: {}
         resources:
           requests:

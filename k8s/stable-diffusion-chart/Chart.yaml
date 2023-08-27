@@ -1,5 +1,5 @@
 apiVersion: v2
-name: stable-diffusion-chart
+name: stable-diffusion
 description: A Helm chart for Stable Diffusion WebUI
 
 # A chart can be either an 'application' or a 'library' chart.

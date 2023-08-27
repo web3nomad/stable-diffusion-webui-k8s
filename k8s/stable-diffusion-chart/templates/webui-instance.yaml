@@ -24,6 +24,8 @@ spec:
         env:
         - name: CLI_ARGS
           value: --no-half --allow-code --medvram --xformers --enable-insecure-extension-access --api
+        - name: https_proxy
+          value: http://sslocal-svc.proxy:3128
         resources: {}
         resources:
           requests:

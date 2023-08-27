@@ -16,6 +16,9 @@ spec:
       containers:
       - name: download-server
         image: ghcr.io/bmrlab/stable-diffusion-webui/dl-server:{{ .Values.webui.images.downloadServer }}
+        env:
+        - name: https_proxy
+          value: http://sslocal-svc.proxy:3128
         command:
         - /bin/sh
         args:

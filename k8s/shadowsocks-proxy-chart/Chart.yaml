@@ -1,5 +1,5 @@
 apiVersion: v2
-name: shadowsocks-proxy-chart
+name: shadowsocks-proxy
 description: A Helm chart for shadowsocks proxy
 
 # A chart can be either an 'application' or a 'library' chart.

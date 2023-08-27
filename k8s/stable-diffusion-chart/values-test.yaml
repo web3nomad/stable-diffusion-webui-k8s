@@ -15,7 +15,7 @@ webui:
     downloadServer: 9ed9b7e
 
 comfy:
-  instances: 2
+  instances: 1
   images:
     comfyInstance: 4da9dd4
 

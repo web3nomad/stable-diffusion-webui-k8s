@@ -1,7 +1,10 @@
 
+sslocal:
+  replicas: 3
+
 # Put endpoint secrets in secrets.yaml
-shadowsocksEndpoint:
-  method: ""
+shadowsocksEndpoints:
+- method: ""
   password: ""
   server: ""
   server_port: 0

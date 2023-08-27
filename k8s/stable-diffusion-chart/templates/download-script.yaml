@@ -16,9 +16,13 @@ spec:
       containers:
       - name: download-script
         image: ghcr.io/bmrlab/stable-diffusion-webui/dl-script:{{ .Values.webui.images.downloadScript }}
-        # env:
-        # - name: all_proxy
-        #   value: socks5://heyshop:wedfairy@proxy.heidianer.com:1080
+        env:
+        - name: https_proxy
+          value: http://sslocal-svc.proxy:3128
+        - name: http_proxy
+          value: http://sslocal-svc.proxy:3128
+        - name: all_proxy
+          value: socks5://sslocal-svc.proxy:1080
         command: ["/bin/sh"]
         args: ["-c", "sleep 3600"]
         resources: {}

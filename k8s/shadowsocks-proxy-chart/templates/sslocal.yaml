@@ -4,6 +4,7 @@ metadata:
   name: sslocal
   namespace: proxy
 spec:
+  replicas: {{ .Values.sslocal.replicas }}
   selector:
     matchLabels:
       app: sslocal
