@@ -12,7 +12,7 @@ webui:
     webuiInstance: gpu-9ed9b7e
     webuiRouter: 9ed9b7e
     downloadScript: 9ed9b7e
-    downloadServer: 9ed9b7e
+    downloadServer: bb4bbd2
 
 comfy:
   instances: 1
