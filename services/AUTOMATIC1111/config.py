@@ -75,4 +75,3 @@ if __name__ == '__main__':
     check_and_replace_config(*sys.argv[1:])
   else:
     check_and_replace_config(DEFAULT_FILEPATH)
-
