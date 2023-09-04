@@ -32,6 +32,8 @@ https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/config/auto
 	out=config/auto/extensions/sd-webui-controlnet/models/control_v11f1e_sd15_tile.pth
 https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/config/auto/extensions/sd-webui-controlnet/models/control_v11f1p_sd15_depth.pth
 	out=config/auto/extensions/sd-webui-controlnet/models/control_v11f1p_sd15_depth.pth
+https://tezign-assets.oss-cn-beijing.aliyuncs.com/test/symphony/model/controlnet/control_sd15_depth.pth
+  out=config/auto/extensions/sd-webui-controlnet/models/control_sd15_depth.pth
 https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/config/auto/extensions/sd-webui-controlnet/models/control_v11p_sd15_canny.pth
 	out=config/auto/extensions/sd-webui-controlnet/models/control_v11p_sd15_canny.pth
 https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/config/auto/extensions/sd-webui-controlnet/models/control_v11p_sd15_inpaint.pth
