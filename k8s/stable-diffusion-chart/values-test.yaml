@@ -11,7 +11,7 @@ webui:
   images:
     webuiInstance: gpu-9ed9b7e
     webuiRouter: 9ed9b7e
-    downloadScript: 9ed9b7e
+    downloadScript: d2a35f7
     downloadServer: bb4bbd2
 
 comfy:
