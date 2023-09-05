@@ -19,4 +19,9 @@ comfy:
   images:
     comfyInstance: 4da9dd4
 
+fooocus:
+  instances: 2
+  images:
+    fooocusInstance: d5aebb8
+
 gatewayHost: webui-test.museai.cc
