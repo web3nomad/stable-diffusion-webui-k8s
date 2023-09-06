@@ -10,7 +10,7 @@ webui:
   instances: 2
   images:
     webuiInstance: gpu-9ed9b7e
-    webuiRouter: 9ed9b7e
+    webuiRouter: ecc2ae8
     downloadScript: d2a35f7
     downloadServer: bb4bbd2
 
