@@ -7,10 +7,10 @@ tlsSecret:
       crt: ssl/wildcard-webui-test-museai-cc-fullchain.pem
 
 webui:
-  instances: 2
+  instances: 1
   images:
     webuiInstance: gpu-9ed9b7e
-    webuiRouter: ecc2ae8
+    webuiRouter: 1d6a97f
     downloadScript: d2a35f7
     downloadServer: bb4bbd2
 
@@ -20,7 +20,7 @@ comfy:
     comfyInstance: 4da9dd4
 
 fooocus:
-  instances: 2
+  instances: 1
   images:
     fooocusInstance: d5aebb8
 
