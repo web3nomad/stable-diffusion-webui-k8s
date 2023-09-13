@@ -20,12 +20,12 @@ echo "Downloading, this might take a while..."
 echo 'git clone start-------------'
 # 如果不存在sd-webui-controlnet 就clone
 if [ ! -d "/data/config/auto/extensions/sd-webui-controlnet" ]; then
-  git clone https://github.com/Mikubill/sd-webui-controlnet.git /data/config/auto/extensions/sd-webui-controlnet/
+  ./clone.sh sd-webui-controlnet https://github.com/Mikubill/sd-webui-controlnet.git 5ae9b4a1a0c7d9a2938e75aaf052ab078623066f
 fi
 
 # ultimate sd upscale
 if [ ! -d "/data/config/auto/extensions/ultimate-upscale-for-automatic1111" ]; then
-  git clone https://github.com/Coyote-A/ultimate-upscale-for-automatic1111.git /data/config/auto/extensions/ultimate-upscale-for-automatic1111/
+  ./clone.sh ultimate-upscale-for-automatic1111 https://github.com/Coyote-A/ultimate-upscale-for-automatic1111.git 728ffcec7fa69c83b9e653bf5b96932acdce750f
 fi
 
 aria2c -x 10 --disable-ipv6 --input-file /docker/links.txt --dir /data --continue
