@@ -23,6 +23,11 @@ if [ ! -d "/data/config/auto/extensions/sd-webui-controlnet" ]; then
   git clone https://github.com/Mikubill/sd-webui-controlnet.git /data/config/auto/extensions/sd-webui-controlnet/
 fi
 
+# ultimate sd upscale
+if [ ! -d "/data/config/auto/extensions/ultimate-upscale-for-automatic1111" ]; then
+  git clone https://github.com/Coyote-A/ultimate-upscale-for-automatic1111.git /data/config/auto/extensions/ultimate-upscale-for-automatic1111/
+fi
+
 aria2c -x 10 --disable-ipv6 --input-file /docker/links.txt --dir /data --continue
 
 echo "Checking SHAs..."
