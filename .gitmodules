@@ -1,6 +1,3 @@
-[submodule "services/webui-router"]
-	path = services/webui-router
-	url = https://github.com/DannyLee1991/sdwebui-router.git
 [submodule "services/download-server"]
 	path = services/download-server
 	url = https://github.com/DannyLee1991/file-downloader

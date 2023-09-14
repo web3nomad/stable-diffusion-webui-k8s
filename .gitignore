@@ -3,5 +3,3 @@
 # VSCode specific
 *.code-workspace
 /.vscode
-
-/datakit
