@@ -27,7 +27,9 @@ RUN --mount=type=cache,target=/cache --mount=type=cache,target=/root/.cache/pip 
 RUN --mount=type=cache,target=/root/.cache/pip \
     git clone https://github.com/lllyasviel/Fooocus.git /Fooocus && \
     cd /Fooocus && \
-    git reset --hard b89192162ddbb1e0287bd5757f329e28d4e7e4ba && \
+    git reset --hard 09e0d1cb3ae5a1d74443009a41da9f96c1b54683 && \
+    # 2.0.72
+    # git reset --hard b89192162ddbb1e0287bd5757f329e28d4e7e4ba && \
     pip3 install -r requirements_versions.txt
 
 RUN --mount=type=cache,target=/root/.cache/pip  \
