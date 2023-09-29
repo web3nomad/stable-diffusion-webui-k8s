@@ -1,0 +1,23 @@
+
+https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Stable-diffusion/sd_xl_base_1.0_0.9vae.safetensors
+    out=models/checkpoints/sd_xl_base_1.0_0.9vae.safetensors
+
+https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Stable-diffusion/sd_xl_refiner_1.0_0.9vae.safetensors
+    out=models/checkpoints/sd_xl_refiner_1.0_0.9vae.safetensors
+
+https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Lora/sd_xl_offset_example-lora_1.0.safetensors
+    out=models/loras/sd_xl_offset_example-lora_1.0.safetensors
+
+https://huggingface.co/lllyasviel/fooocus_inpaint/resolve/main/inpaint.fooocus.patch
+    out=models/inpaint/inpaint.fooocus.patch
+
+https://huggingface.co/lllyasviel/misc/resolve/main/xlvaeapp.pth
+    out=models/vae_approx/xlvaeapp.pth
+
+https://huggingface.co/lllyasviel/misc/resolve/main/fooocus_upscaler_s409985e5.bin
+    out=models/upscale_models/fooocus_upscaler_s409985e5.bin
+
+https://huggingface.co/lllyasviel/misc/resolve/main/fooocus_expansion.bin
+    out=models/prompt_expansion/fooocus_expansion/pytorch_model.bin
+
+# aria2c -x 10 --disable-ipv6 --input-file /docker/links.txt --dir /data --continue

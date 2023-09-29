@@ -8,15 +8,6 @@ RUN apk add --no-cache aria2
 RUN aria2c -x 5 --dir / --out wheel.whl 'https://github.com/AbdBarho/stable-diffusion-webui-docker/releases/download/6.0.0/xformers-0.0.21.dev544-cp310-cp310-manylinux2014_x86_64-pytorch201.whl'
 
 
-# FROM nvidia/cuda:12.2.0-runtime-ubuntu22.04
-
-# RUN --mount=type=cache,target=/var/cache/apt \
-#     apt-get update && \
-#     apt-get install --no-install-recommends -y python3 python3-pip python3-dev python3-venv git && \
-#     rm -rf /var/lib/apt/lists/*
-
-# RUN python3 -m venv /venv
-
 FROM python:3.10.9-slim
 
 ENV DEBIAN_FRONTEND=noninteractive PIP_PREFER_BINARY=1
@@ -37,8 +28,6 @@ RUN --mount=type=cache,target=/root/.cache/pip \
     git clone https://github.com/lllyasviel/Fooocus.git /Fooocus && \
     cd /Fooocus && \
     git reset --hard b89192162ddbb1e0287bd5757f329e28d4e7e4ba && \
-    # . /venv/bin/activate && \
-    # pip3 install --upgrade pip && \
     pip3 install -r requirements_versions.txt
 
 RUN --mount=type=cache,target=/root/.cache/pip  \
@@ -47,7 +36,9 @@ RUN --mount=type=cache,target=/root/.cache/pip  \
 
 COPY --from=download /repositories/ /Fooocus/repositories/
 
-WORKDIR /Fooocus
+COPY . /docker
 
-# ENTRYPOINT [ "bash", "-c", ". /venv/bin/activate && exec \"$@\"", "--" ]
+WORKDIR /Fooocus
+ENV NVIDIA_VISIBLE_DEVICES=all
+ENTRYPOINT ["/docker/entrypoint.sh"]
 CMD [ "python3", "launch.py", "--listen" ]
