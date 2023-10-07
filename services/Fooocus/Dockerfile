@@ -1,6 +1,6 @@
 FROM alpine/git:2.36.2 as download
 COPY clone.sh /clone.sh
-RUN . /clone.sh ComfyUI-from-StabilityAI-Official https://github.com/comfyanonymous/ComfyUI.git 2bc12d3d22efb5c63ae3a7fc342bb2dd16b31735
+RUN . /clone.sh ComfyUI-from-StabilityAI-Official https://github.com/comfyanonymous/ComfyUI 9bfec2bdbf0b0d778087a9b32f79e57e2d15b913
 
 
 FROM alpine:3.17 as xformers
@@ -27,9 +27,7 @@ RUN --mount=type=cache,target=/cache --mount=type=cache,target=/root/.cache/pip 
 RUN --mount=type=cache,target=/root/.cache/pip \
     git clone https://github.com/lllyasviel/Fooocus.git /Fooocus && \
     cd /Fooocus && \
-    git reset --hard 09e0d1cb3ae5a1d74443009a41da9f96c1b54683 && \
-    # 2.0.72
-    # git reset --hard b89192162ddbb1e0287bd5757f329e28d4e7e4ba && \
+    git reset --hard b42e96a52d92265fb966954090aa43340f199008 && \
     pip3 install -r requirements_versions.txt
 
 RUN --mount=type=cache,target=/root/.cache/pip  \
