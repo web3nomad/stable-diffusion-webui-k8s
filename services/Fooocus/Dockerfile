@@ -40,5 +40,6 @@ COPY . /docker
 
 WORKDIR /Fooocus
 ENV NVIDIA_VISIBLE_DEVICES=all
+ENV PYTHONUNBUFFERED 1
 ENTRYPOINT ["/docker/entrypoint.sh"]
-CMD [ "python3", "launch.py", "--listen" ]
+CMD ["python3", "launch.py", "--listen"]
