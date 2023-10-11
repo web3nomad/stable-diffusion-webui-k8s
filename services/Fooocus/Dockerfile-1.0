@@ -1,3 +1,8 @@
+FROM alpine/git:2.36.2 as download
+COPY clone.sh /clone.sh
+RUN . /clone.sh ComfyUI-from-StabilityAI-Official https://github.com/comfyanonymous/ComfyUI 5e885bd9c822a3cc7d50d75a40958265f497cd03
+
+
 FROM alpine:3.17 as xformers
 RUN apk add --no-cache aria2
 RUN aria2c -x 5 --dir / --out wheel.whl 'https://github.com/AbdBarho/stable-diffusion-webui-docker/releases/download/6.0.0/xformers-0.0.21.dev544-cp310-cp310-manylinux2014_x86_64-pytorch201.whl'
@@ -29,11 +34,12 @@ RUN --mount=type=cache,target=/root/.cache/pip  \
   --mount=type=bind,from=xformers,source=/wheel.whl,target=/xformers-0.0.21.dev544-cp310-cp310-manylinux2014_x86_64.whl \
   pip install /xformers-0.0.21.dev544-cp310-cp310-manylinux2014_x86_64.whl
 
+COPY --from=download /repositories/ /Fooocus/repositories/
+
 COPY . /docker
 
 WORKDIR /Fooocus
 ENV NVIDIA_VISIBLE_DEVICES=all
 ENV PYTHONUNBUFFERED 1
-
 ENTRYPOINT ["/docker/entrypoint.sh"]
 CMD ["python3", "launch.py", "--listen"]
