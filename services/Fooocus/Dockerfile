@@ -20,9 +20,9 @@ RUN --mount=type=cache,target=/cache --mount=type=cache,target=/root/.cache/pip 
   pip install /cache/torch-2.0.1-cp310-cp310-linux_x86_64.whl torchvision --index-url https://download.pytorch.org/whl/cu118
 
 RUN --mount=type=cache,target=/root/.cache/pip \
-    git clone https://github.com/lllyasviel/Fooocus.git /Fooocus && \
+    git clone https://github.com/bmrlab/Fooocus.git /Fooocus && \
     cd /Fooocus && \
-    git reset --hard 777510dc9b3325092981493d98943836264454cd && \
+    git reset --hard ce249ca807e8da8347947ad68179ab640d26343d && \
     pip3 install -r requirements_versions.txt
 
 RUN --mount=type=cache,target=/root/.cache/pip  \

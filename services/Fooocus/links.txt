@@ -11,6 +11,9 @@ https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Lora
 https://huggingface.co/lllyasviel/fooocus_inpaint/resolve/main/inpaint.fooocus.patch
     out=models/inpaint/inpaint.fooocus.patch
 
+https://huggingface.co/lllyasviel/fooocus_inpaint/resolve/main/inpaint_v25.fooocus.patch
+    out=models/inpaint/inpaint_v25.fooocus.patch
+
 https://huggingface.co/lllyasviel/misc/resolve/main/xlvaeapp.pth
     out=models/vae_approx/xlvaeapp.pth
 
@@ -19,5 +22,23 @@ https://huggingface.co/lllyasviel/misc/resolve/main/fooocus_upscaler_s409985e5.b
 
 https://huggingface.co/lllyasviel/misc/resolve/main/fooocus_expansion.bin
     out=models/prompt_expansion/fooocus_expansion/pytorch_model.bin
+
+https://huggingface.co/lllyasviel/misc/resolve/main/control-lora-canny-rank128.safetensors
+    out=models/controlnet/control-lora-canny-rank128.safetensors
+
+https://huggingface.co/lllyasviel/misc/resolve/main/fooocus_xl_cpds_128.safetensors
+    out=models/controlnet/fooocus_xl_cpds_128.safetensors
+
+https://huggingface.co/lllyasviel/misc/resolve/main/clip_vision_vit_h.safetensors
+    out=models/clip_vision/clip_vision_vit_h.safetensors
+
+https://huggingface.co/lllyasviel/misc/resolve/main/fooocus_ip_negative.safetensors
+    out=models/controlnet/fooocus_ip_negative.safetensors
+
+https://huggingface.co/lllyasviel/misc/resolve/main/ip-adapter-plus_sdxl_vit-h.bin
+    out=models/controlnet/ip-adapter-plus_sdxl_vit-h.bin
+
+https://huggingface.co/lllyasviel/misc/resolve/main/fooocus_upscaler_s409985e5.bin
+    out=models/upscale_models/fooocus_upscaler_s409985e5.bin
 
 # aria2c -x 10 --disable-ipv6 --input-file /docker/links.txt --dir /data --continue
