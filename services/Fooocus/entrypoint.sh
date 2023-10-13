@@ -2,7 +2,7 @@
 
 set -Eeuo pipefail
 
-for i in checkpoints loras inpaint vae_approx upscale_models prompt_expansion controlnet; do
+for i in checkpoints loras inpaint vae_approx upscale_models prompt_expansion controlnet clip_vision; do
   mkdir -p /data/models/$i
 done
 
