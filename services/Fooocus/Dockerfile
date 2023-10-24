@@ -22,8 +22,9 @@ RUN --mount=type=cache,target=/cache --mount=type=cache,target=/root/.cache/pip 
 RUN --mount=type=cache,target=/root/.cache/pip \
     git clone https://github.com/bmrlab/Fooocus.git /Fooocus && \
     cd /Fooocus && \
-    git reset --hard 5baa1b3e40d36f7c72e205afc253a29d1bf36a2b && \
-    pip3 install -r requirements_versions.txt
+    git reset --hard 6d80dce58573f544076e837fee9e32c30f081757 && \
+    pip3 install -r requirements_versions.txt && \
+    pip3 install -r requirements_api.txt
 
 RUN --mount=type=cache,target=/root/.cache/pip  \
   --mount=type=bind,from=xformers,source=/wheel.whl,target=/xformers-0.0.21.dev544-cp310-cp310-manylinux2014_x86_64.whl \
@@ -36,4 +37,4 @@ ENV NVIDIA_VISIBLE_DEVICES=all
 ENV PYTHONUNBUFFERED 1
 
 ENTRYPOINT ["/docker/entrypoint.sh"]
-CMD ["python3", "launch.py", "--listen"]
+CMD ["python3", "api.py"]
