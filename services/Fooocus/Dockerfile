@@ -22,7 +22,7 @@ RUN --mount=type=cache,target=/cache --mount=type=cache,target=/root/.cache/pip 
 RUN --mount=type=cache,target=/root/.cache/pip \
     git clone https://github.com/bmrlab/Fooocus.git /Fooocus && \
     cd /Fooocus && \
-    git reset --hard a9b21e2d252cd78b3f68cf246ec5269008ea826f && \
+    git reset --hard 8b8ab30e1505b23d3d2aed92d83450e4bb0019aa && \
     pip3 install -r requirements_versions.txt && \
     pip3 install -r requirements_api.txt
 
