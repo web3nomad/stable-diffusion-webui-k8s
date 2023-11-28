@@ -39,7 +39,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
   git checkout ${BRANCH} && \
   git reset --hard ${SHA} && \
   pip install -r requirements.txt && \
-  pip install opencv-python
+  pip install opencv-python matplotlib
 
 # add info
 COPY . /docker/
