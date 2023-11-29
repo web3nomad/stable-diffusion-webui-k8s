@@ -22,7 +22,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
   git clone https://github.com/comfyanonymous/ComfyUI.git ${ROOT} && \
   cd ${ROOT} && \
   git checkout master && \
-  git reset --hard 884ea653c8d6fe19b3724f45a04a0d74cd881f2f && \
+  git reset --hard 777f6b15225197898a5f49742682a2be859072d7 && \
   pip install -r requirements.txt
 
 
