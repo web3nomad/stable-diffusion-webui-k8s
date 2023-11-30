@@ -8,16 +8,14 @@ ENV DEBIAN_FRONTEND=noninteractive PIP_PREFER_BINARY=1
 
 RUN apt-get update && apt-get install -y git && apt-get clean
 
-RUN --mount=type=cache,target=/var/cache/apt \
-  apt-get update && \
-  # we need those
-  apt-get install -y fonts-dejavu-core rsync git jq moreutils aria2 \
-  # extensions needs those
-  ffmpeg libglfw3-dev libgles2-mesa-dev pkg-config libcairo2 libcairo2-dev libsm6 libxext6 build-essential && \
-  apt-get clean
-
-
 ENV ROOT=/stable-diffusion
+RUN --mount=type=cache,target=/root/.cache/pip \
+  git clone https://github.com/comfyanonymous/ComfyUI.git ${ROOT} && \
+  cd ${ROOT} && \
+  git checkout master && \
+  git reset --hard 777f6b15225197898a5f49742682a2be859072d7 && \
+  pip install -r requirements.txt
+
 
 RUN --mount=type=cache,target=/root/.cache/pip  \
   --mount=type=bind,from=xformers,source=/wheel.whl,target=/xformers-0.0.21-cp310-cp310-linux_x86_64.whl \
@@ -31,8 +29,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
   git fetch && \
   git checkout ${BRANCH} && \
   git reset --hard ${SHA} && \
-  pip install -r requirements.txt && \
-  pip install opencv-python matplotlib
+  pip install -r requirements.txt
 
 # add info
 COPY . /docker/
