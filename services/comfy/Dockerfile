@@ -18,13 +18,6 @@ RUN --mount=type=cache,target=/var/cache/apt \
 
 
 ENV ROOT=/stable-diffusion
-RUN --mount=type=cache,target=/root/.cache/pip \
-  git clone https://github.com/comfyanonymous/ComfyUI.git ${ROOT} && \
-  cd ${ROOT} && \
-  git checkout master && \
-  git reset --hard 777f6b15225197898a5f49742682a2be859072d7 && \
-  pip install -r requirements.txt
-
 
 RUN --mount=type=cache,target=/root/.cache/pip  \
   --mount=type=bind,from=xformers,source=/wheel.whl,target=/xformers-0.0.21-cp310-cp310-linux_x86_64.whl \
@@ -33,7 +26,7 @@ RUN --mount=type=cache,target=/root/.cache/pip  \
 
 WORKDIR ${ROOT}
 
-ARG BRANCH=master SHA=39e75862b248a20e8233ccee743ba5b2e977cdcf
+ARG BRANCH=master SHA=777f6b15225197898a5f49742682a2be859072d7
 RUN --mount=type=cache,target=/root/.cache/pip \
   git fetch && \
   git checkout ${BRANCH} && \
