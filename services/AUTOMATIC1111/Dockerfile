@@ -47,6 +47,10 @@ RUN --mount=type=cache,target=/root/.cache/pip \
   git reset --hard 20ae71faa8ef035c31aa3a410b707d792c8203a3 && \
   pip install -r requirements_versions.txt
 
+# override default samplers
+RUN mv /stable-diffusion-webui/modules/sd_samplers_kdiffusion.py /stable-diffusion-webui/modules/sd_samplers_kdiffusion.py.bak
+COPY override_samplers.py /stable-diffusion-webui/modules/sd_samplers_kdiffusion.py
+
 RUN --mount=type=cache,target=/root/.cache/pip  \
   --mount=type=bind,from=xformers,source=/wheel.whl,target=/xformers-0.0.21.dev544-cp310-cp310-manylinux2014_x86_64.whl \
   pip install /xformers-0.0.21.dev544-cp310-cp310-manylinux2014_x86_64.whl
