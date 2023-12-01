@@ -21,5 +21,6 @@ a111:
   # TODO: I am unsure about these, need more testing
   # style_models: config/comfy/style_models
   # t2i_adapter: config/comfy/t2i_adapter
-  # clip_vision: config/comfy/clip_vision
+  clip_vision: config/comfy/clip_vision
+  ipadapter: config/comfy/ipadapter
   # diffusers: config/comfy/diffusers
