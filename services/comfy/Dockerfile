@@ -8,6 +8,15 @@ ENV DEBIAN_FRONTEND=noninteractive PIP_PREFER_BINARY=1
 
 RUN apt-get update && apt-get install -y git && apt-get clean
 
+RUN --mount=type=cache,target=/var/cache/apt \
+  apt-get update && \
+  # we need those
+  apt-get install -y fonts-dejavu-core rsync git jq moreutils aria2 \
+  # extensions needs those
+  ffmpeg libglfw3-dev libgles2-mesa-dev pkg-config libcairo2 libcairo2-dev libsm6 libxext6 build-essential && \
+  apt-get clean
+
+
 ENV ROOT=/stable-diffusion
 RUN --mount=type=cache,target=/root/.cache/pip \
   git clone https://github.com/comfyanonymous/ComfyUI.git ${ROOT} && \
