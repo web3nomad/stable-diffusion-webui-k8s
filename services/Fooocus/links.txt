@@ -47,4 +47,7 @@ https://huggingface.co/lllyasviel/misc/resolve/main/vaeapp_sd15.pt
 https://huggingface.co/lllyasviel/misc/resolve/main/xl-to-v1_interposer-v3.1.safetensors
     out=models/vae_approx/xl-to-v1_interposer-v3.1.safetensors
 
+https://huggingface.co/lllyasviel/misc/resolve/main/sdxl_lcm_lora.safetensors
+    out=models/loras/sdxl_lcm_lora.safetensors
+
 # aria2c -x 10 --disable-ipv6 --input-file /docker/links.txt --dir /data --continue
