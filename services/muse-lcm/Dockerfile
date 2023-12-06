@@ -1,8 +1,3 @@
-FROM alpine:3.17 as xformers
-RUN apk add --no-cache aria2
-RUN aria2c -x 5 --dir / --out wheel.whl 'https://github.com/AbdBarho/stable-diffusion-webui-docker/releases/download/6.0.0/xformers-0.0.21.dev544-cp310-cp310-manylinux2014_x86_64-pytorch201.whl'
-
-
 FROM python:3.10.9-slim
 
 ENV DEBIAN_FRONTEND=noninteractive PIP_PREFER_BINARY=1
@@ -14,20 +9,24 @@ RUN --mount=type=cache,target=/var/cache/apt \
   # extensions needs those
   ffmpeg libglfw3-dev libgles2-mesa-dev pkg-config libcairo2 libcairo2-dev build-essential
 
-RUN --mount=type=cache,target=/cache --mount=type=cache,target=/root/.cache/pip \
-  aria2c -x 5 --dir /cache --out torch-2.0.1-cp310-cp310-linux_x86_64.whl -c \
-  https://download.pytorch.org/whl/cu118/torch-2.0.1%2Bcu118-cp310-cp310-linux_x86_64.whl && \
-  pip install /cache/torch-2.0.1-cp310-cp310-linux_x86_64.whl torchvision --index-url https://download.pytorch.org/whl/cu118
+RUN --mount=type=cache,target=/root/.cache/pip \
+  pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+
+# install stable-fast
+# RUN aria2c -x 5 --dir / --out stable_fast-0.0.13.post3+torch210cu118-cp310-cp310-manylinux2014_x86_64.whl 'https://github.com/chengzeyi/stable-fast/releases/download/v0.0.13.post3/stable_fast-0.0.13.post3+torch210cu118-cp310-cp310-manylinux2014_x86_64.whl'
+# RUN pip3 install /stable_fast-0.0.13.post3+torch210cu118-cp310-cp310-manylinux2014_x86_64.whl
+RUN aria2c -x 5 --dir / --out stable_fast-0.0.13.post3+torch210cu121-cp310-cp310-manylinux2014_x86_64.whl 'https://github.com/chengzeyi/stable-fast/releases/download/v0.0.13.post3/stable_fast-0.0.13.post3+torch210cu121-cp310-cp310-manylinux2014_x86_64.whl'
+RUN pip3 install /stable_fast-0.0.13.post3+torch210cu121-cp310-cp310-manylinux2014_x86_64.whl
+
+# install xformers and triton
+RUN --mount=type=cache,target=/root/.cache/pip \
+  pip3 install xformers triton
 
 RUN --mount=type=cache,target=/root/.cache/pip \
-    git clone https://github.com/bmrlab/muse-lcm.git /muse-lcm && \
-    cd /muse-lcm && \
-    git reset --hard eddc487c815bd4249a6bc29cf46f988b8bc6054f && \
-    pip3 install -r requirements.txt
-
-RUN --mount=type=cache,target=/root/.cache/pip  \
-  --mount=type=bind,from=xformers,source=/wheel.whl,target=/xformers-0.0.21.dev544-cp310-cp310-manylinux2014_x86_64.whl \
-  pip install /xformers-0.0.21.dev544-cp310-cp310-manylinux2014_x86_64.whl
+  git clone https://github.com/bmrlab/muse-lcm.git /muse-lcm && \
+  cd /muse-lcm && \
+  git reset --hard 58907632998dec8662d3a86894a7abb1e34b71c8 && \
+  pip3 install -r requirements.txt
 
 COPY . /docker
 
