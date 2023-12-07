@@ -10,7 +10,7 @@ RUN --mount=type=cache,target=/var/cache/apt \
   ffmpeg libglfw3-dev libgles2-mesa-dev pkg-config libcairo2 libcairo2-dev build-essential
 
 RUN --mount=type=cache,target=/root/.cache/pip \
-  pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+  pip3 install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https://download.pytorch.org/whl/cu121
 
 # install stable-fast
 # RUN aria2c -x 5 --dir / --out stable_fast-0.0.13.post3+torch210cu118-cp310-cp310-manylinux2014_x86_64.whl 'https://github.com/chengzeyi/stable-fast/releases/download/v0.0.13.post3/stable_fast-0.0.13.post3+torch210cu118-cp310-cp310-manylinux2014_x86_64.whl'
@@ -18,9 +18,12 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 RUN aria2c -x 5 --dir / --out stable_fast-0.0.13.post3+torch210cu121-cp310-cp310-manylinux2014_x86_64.whl 'https://github.com/chengzeyi/stable-fast/releases/download/v0.0.13.post3/stable_fast-0.0.13.post3+torch210cu121-cp310-cp310-manylinux2014_x86_64.whl'
 RUN pip3 install /stable_fast-0.0.13.post3+torch210cu121-cp310-cp310-manylinux2014_x86_64.whl
 
-# install xformers and triton
+# install triton
 RUN --mount=type=cache,target=/root/.cache/pip \
-  pip3 install xformers triton
+  pip3 install triton
+# install xformers
+RUN --mount=type=cache,target=/root/.cache/pip \
+  pip3 install -U xformers --index-url https://download.pytorch.org/whl/cu121
 
 RUN --mount=type=cache,target=/root/.cache/pip \
   git clone https://github.com/bmrlab/muse-lcm.git /muse-lcm && \
