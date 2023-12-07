@@ -22,7 +22,7 @@ RUN --mount=type=cache,target=/cache --mount=type=cache,target=/root/.cache/pip 
 RUN --mount=type=cache,target=/root/.cache/pip \
     git clone https://github.com/bmrlab/Fooocus.git /Fooocus && \
     cd /Fooocus && \
-    git reset --hard 31692d4098377b6939be38acebfe5d08d9c6d0de && \
+    git reset --hard ce8c546c191c6ef1a831c89790d7757b38c38626 && \
     pip3 install -r requirements_versions.txt && \
     pip3 install -r requirements_api.txt
 
@@ -36,7 +36,7 @@ WORKDIR /Fooocus
 ENV NVIDIA_VISIBLE_DEVICES=all
 ENV PYTHONUNBUFFERED 1
 
-ENV CLI_ARGS=""
+ENV CLI_ARGS="--force-fp16 --use-pytorch-cross-attention"
 
 ENTRYPOINT ["/docker/entrypoint.sh"]
 CMD python3 api.py ${CLI_ARGS}
