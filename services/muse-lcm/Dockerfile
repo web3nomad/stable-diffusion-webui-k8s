@@ -28,7 +28,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 RUN --mount=type=cache,target=/root/.cache/pip \
   git clone https://github.com/bmrlab/muse-lcm.git /muse-lcm && \
   cd /muse-lcm && \
-  git reset --hard ff0fceefadd5415a6946d7b8289042d27b30a1ef && \
+  git reset --hard 860a56eeebe1981d1ede7bb9609ee930b49071de && \
   pip3 install -r requirements.txt
 
 COPY . /docker
