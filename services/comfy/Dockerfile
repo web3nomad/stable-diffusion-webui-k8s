@@ -32,7 +32,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
   python -m pip install -U pip && \
   pip3 install -U setuptools && \
   pip3 install -r requirements.txt && \
-  pip3 install opencv-python matplotlib skimage simpleeval && \
+  pip3 install opencv-python matplotlib scikit-image simpleeval && \
   pip3 install onnx zstandard && \
   pip3 install --pre --upgrade --extra-index-url https://pypi.nvidia.com tensorrt && \
   pip3 install onnx-graphsurgeon polygraphy --extra-index-url https://pypi.ngc.nvidia.com
