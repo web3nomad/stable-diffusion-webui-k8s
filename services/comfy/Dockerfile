@@ -31,7 +31,10 @@ RUN --mount=type=cache,target=/root/.cache/pip \
   cd ${ROOT} && \
   git reset --hard 777f6b15225197898a5f49742682a2be859072d7 && \
   pip install -r requirements.txt && \
-  pip install opencv-python matplotlib
+  pip install opencv-python matplotlib skimage simpleeval && \
+  pip install onnx zstandard && \
+  pip install --pre --upgrade --extra-index-url https://pypi.nvidia.com tensorrt && \
+  pip install onnx-graphsurgeon polygraphy --extra-index-url https://pypi.ngc.nvidia.com
 
 WORKDIR ${ROOT}
 
