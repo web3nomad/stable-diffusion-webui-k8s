@@ -26,6 +26,9 @@ RUN --mount=type=cache,target=/root/.cache/pip \
   pip3 install -U xformers --index-url https://download.pytorch.org/whl/cu121
 
 RUN --mount=type=cache,target=/root/.cache/pip \
+  pip3 install -U accelerate
+
+RUN --mount=type=cache,target=/root/.cache/pip \
   git clone https://github.com/bmrlab/muse-lcm.git /muse-lcm && \
   cd /muse-lcm && \
   git reset --hard bde0f961ac31363db995058fb2e42901710d5fda && \
