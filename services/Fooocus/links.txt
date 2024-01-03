@@ -11,8 +11,8 @@ https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Lora
 https://huggingface.co/lllyasviel/fooocus_inpaint/resolve/main/inpaint.fooocus.patch
     out=models/inpaint/inpaint.fooocus.patch
 
-https://huggingface.co/lllyasviel/fooocus_inpaint/resolve/main/inpaint_v25.fooocus.patch
-    out=models/inpaint/inpaint_v25.fooocus.patch
+https://huggingface.co/lllyasviel/fooocus_inpaint/resolve/main/inpaint_v26.fooocus.patch
+    out=models/inpaint/inpaint_v26.fooocus.patch
 
 https://huggingface.co/lllyasviel/misc/resolve/main/xlvaeapp.pth
     out=models/vae_approx/xlvaeapp.pth
@@ -34,6 +34,9 @@ https://huggingface.co/diffusers/controlnet-canny-sdxl-1.0/resolve/main/diffusio
 
 https://huggingface.co/diffusers/controlnet-depth-sdxl-1.0/resolve/main/diffusion_pytorch_model.fp16.safetensors
     out=models/controlnet/controlnet-depth-sdxl-1.0.safetensors
+
+https://huggingface.co/thibaud/controlnet-openpose-sdxl-1.0/resolve/main/control-lora-openposeXL2-rank256.safetensors
+    out=models/controlnet/control-lora-openposeXL2-rank256.safetensors
 
 https://huggingface.co/lllyasviel/misc/resolve/main/clip_vision_vit_h.safetensors
     out=models/clip_vision/clip_vision_vit_h.safetensors
