@@ -38,6 +38,9 @@ https://huggingface.co/diffusers/controlnet-depth-sdxl-1.0/resolve/main/diffusio
 https://huggingface.co/thibaud/controlnet-openpose-sdxl-1.0/resolve/main/control-lora-openposeXL2-rank256.safetensors
     out=models/controlnet/control-lora-openposeXL2-rank256.safetensors
 
+https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/ControlNet/control_v1p_sdxl_qrcode_monster.safetensors
+    out=models/controlnet/control_v1p_sdxl_qrcode_monster.safetensors
+
 https://huggingface.co/lllyasviel/misc/resolve/main/clip_vision_vit_h.safetensors
     out=models/clip_vision/clip_vision_vit_h.safetensors
 
