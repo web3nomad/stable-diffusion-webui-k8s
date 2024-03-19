@@ -10,7 +10,7 @@ RUN apt-get update -y && \
 RUN --mount=type=cache,target=/root/.cache/pip \
     git clone https://github.com/bmrlab/Fooocus.git /Fooocus && \
     cd /Fooocus && \
-    git reset --hard 92f4071309a2972b5f0a22dd191faa52e6f21ed8 && \
+    git reset --hard d0e1b56025fa4e793c097532e5b216e3fe13bba9 && \
     pip3 install -r requirements_docker.txt && \
     pip3 install -r requirements_versions.txt && \
     pip3 install -r requirements_api.txt
