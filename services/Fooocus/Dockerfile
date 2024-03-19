@@ -18,10 +18,6 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 RUN --mount=type=cache,target=/root/.cache/pip  \
   pip3 install xformers==0.0.23 --no-dependencies
 
-# 这里不太清楚是不是需要，但是Fooocus更新的Dockerfile里有，先复制过来
-RUN curl -fsL -o /usr/local/lib/python3.10/dist-packages/gradio/frpc_linux_amd64_v0.2 https://cdn-media.huggingface.co/frpc-gradio-0.2/frpc_linux_amd64 && \
-	chmod +x /usr/local/lib/python3.10/dist-packages/gradio/frpc_linux_amd64_v0.2
-
 COPY . /docker
 
 WORKDIR /Fooocus
