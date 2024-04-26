@@ -28,4 +28,5 @@ if [ -f "/data/config/comfy/startup.sh" ]; then
   popd
 fi
 
-exec "$@"
+# exec "$@"
+python -u main.py --listen --port 7860

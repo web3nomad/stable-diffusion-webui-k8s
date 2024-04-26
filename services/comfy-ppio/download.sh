@@ -3,9 +3,8 @@
 set -Eeuo pipefail
 
 # TODO: maybe just use the .gitignore file to create all of these
-mkdir -vp /data/.cache \
+mkdir -vp \
   /data/embeddings \
-  /data/config/ \
   /data/models/ \
   /data/models/Stable-diffusion \
   /data/models/GFPGAN \
@@ -13,32 +12,17 @@ mkdir -vp /data/.cache \
   /data/models/LDSR \
   /data/models/VAE \
   /data/models/ControlNet \
-  /data/config/auto/extensions
+
+echo "Clone the repositories of custom nodes..."
+
+./clone.sh comfyui-tooling-nodes https://github.com/Acly/comfyui-tooling-nodes.git 7fc46f18f9f9751865588a9c74d0e058ba7afd90
+./clone.sh efficiency-nodes-comfyui https://github.com/jags111/efficiency-nodes-comfyui.git b0ab993a33f5bec86b13806dcc1a9b41b76cb174
+./clone.sh ComfyUI_Base64_Image https://github.com/web3nomad/ComfyUI_Base64_Image.git 1bf9bc2237e800f8c2058310d6dc8bca1d92b40c
 
 echo "Downloading, this might take a while..."
-
-echo 'git clone start-------------'
-# 如果不存在sd-webui-controlnet 就clone
-if [ ! -d "/data/config/auto/extensions/sd-webui-controlnet" ]; then
-  ./clone.sh sd-webui-controlnet https://github.com/Mikubill/sd-webui-controlnet.git 5ae9b4a1a0c7d9a2938e75aaf052ab078623066f
-fi
-
-# ultimate sd upscale
-if [ ! -d "/data/config/auto/extensions/ultimate-upscale-for-automatic1111" ]; then
-  ./clone.sh ultimate-upscale-for-automatic1111 https://github.com/Coyote-A/ultimate-upscale-for-automatic1111.git 728ffcec7fa69c83b9e653bf5b96932acdce750f
-fi
 
 aria2c -x 10 --disable-ipv6 --input-file /docker/links.txt --dir /data --continue
 
 echo "Checking SHAs..."
 
 parallel --will-cite -a /docker/checksums.sha256 "echo -n {} | sha256sum -c"
-
-cat <<EOF
-By using this software, you agree to the following licenses:
-https://github.com/AbdBarho/stable-diffusion-webui-docker/blob/master/LICENSE
-https://github.com/CompVis/stable-diffusion/blob/main/LICENSE
-https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/LICENSE.txt
-https://github.com/invoke-ai/InvokeAI/blob/main/LICENSE
-And licenses of all UIs, third party libraries, and extensions.
-EOF

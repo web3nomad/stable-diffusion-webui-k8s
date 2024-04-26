@@ -12,16 +12,35 @@
 
 PPIO 的容器共享一个云存储，挂载的名字是 `ppio_net0`，这个名字没法修改。
 
-**修改 comfyui 的启动命令**
+### 1. ComfyUI 启动
 
 ```bash
-bash -c ["rm -rf /data && ln -s /ppio_net0 && /docker/entrypoint.sh && python -u main.py --l
-isten --port 7860"]
+bash -c "ln -s /ppio_net0 /data && /docker/entrypoint.sh"
 ```
-因为 `ENTRYPOINT ["/docker/entrypoint.sh"]` 会创建 `/data` 目录，这个首先要删了然后再重新运行 `/docker/entrypoint.sh`
 
-**修改 download script 的启动命令**
+如果 Dockerfile 里面没有删掉 `ENTRYPOINT ["/docker/entrypoint.sh"]`，会创建 `/data` 目录，这样要先要删了 `/data`，然后再创建 symlink，最后再重新运行 `/docker/entrypoint.sh`
 
 ```bash
-rm -rf /data && ln -s /ppio_net0 && bash -c "sleep 3600"
+bash -c "rm -rf /data && ln -s /ppio_net0 /data && /docker/entrypoint.sh && python -u main.py --l
+isten --port 7860"
+```
+
+### 2. 初始化
+
+下载模型
+
+下载 Custom Nodes
+
+
+## Build
+
+```bash
+docker buildx build --platform linux/amd64 -t image.paigpu.com/prod-[ppio account]/comfy-ppio:[tag] .
+docker push image.paigpu.com/prod-[ppio account]/comfy-ppio:[tag]
+```
+
+**test**
+
+```bash
+docker run --platform linux/amd64 -p 7860:7860 -v ~/downloads/comfy-ppio/data:/data comfy-ppio /docker/entrypoint.sh
 ```

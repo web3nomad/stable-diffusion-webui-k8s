@@ -12,6 +12,8 @@ https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/LDSR
   out=models/LDSR/model.ckpt
 
 # checkpoints
+https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Stable-diffusion/sd_xl_base_1.0_0.9vae.safetensors
+  out=models/Stable-diffusion/sd_xl_base_1.0_0.9vae.safetensors
 https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Stable-diffusion/sd-v1-5-inpainting.ckpt
   out=models/Stable-diffusion/sd-v1-5-inpainting.ckpt
 https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Stable-diffusion/v1-5-pruned-emaonly.safetensors
@@ -24,37 +26,3 @@ https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Lora
   out=models/Lora/add_detail.safetensors
 https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Lora/lcm-lora-sdv1-5.safetensors
   out=models/Lora/lcm-lora-sdv1-5.safetensors
-
-# controlNet models
-https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/config/auto/extensions/sd-webui-controlnet/models/control_v11e_sd15_ip2p.pth
-	out=config/auto/extensions/sd-webui-controlnet/models/control_v11e_sd15_ip2p.pth
-https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/config/auto/extensions/sd-webui-controlnet/models/control_v11e_sd15_shuffle.pth
-	out=config/auto/extensions/sd-webui-controlnet/models/control_v11e_sd15_shuffle.pth
-https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/config/auto/extensions/sd-webui-controlnet/models/control_v11f1e_sd15_tile.pth
-	out=config/auto/extensions/sd-webui-controlnet/models/control_v11f1e_sd15_tile.pth
-https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/config/auto/extensions/sd-webui-controlnet/models/control_v11f1p_sd15_depth.pth
-	out=config/auto/extensions/sd-webui-controlnet/models/control_v11f1p_sd15_depth.pth
-https://tezign-assets.oss-cn-beijing.aliyuncs.com/test/symphony/model/controlnet/control_sd15_depth.pth
-  out=config/auto/extensions/sd-webui-controlnet/models/control_sd15_depth.pth
-https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/config/auto/extensions/sd-webui-controlnet/models/control_v11p_sd15_canny.pth
-	out=config/auto/extensions/sd-webui-controlnet/models/control_v11p_sd15_canny.pth
-https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/config/auto/extensions/sd-webui-controlnet/models/control_v11p_sd15_inpaint.pth
-	out=config/auto/extensions/sd-webui-controlnet/models/control_v11p_sd15_inpaint.pth
-https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/config/auto/extensions/sd-webui-controlnet/models/control_v11p_sd15_lineart.pth
-	out=config/auto/extensions/sd-webui-controlnet/models/control_v11p_sd15_lineart.pth
-https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/config/auto/extensions/sd-webui-controlnet/models/control_v11p_sd15_mlsd.pth
-	out=config/auto/extensions/sd-webui-controlnet/models/control_v11p_sd15_mlsd.pth
-https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/config/auto/extensions/sd-webui-controlnet/models/control_v11p_sd15_normalbae.pth
-	out=config/auto/extensions/sd-webui-controlnet/models/control_v11p_sd15_normalbae.pth
-https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/config/auto/extensions/sd-webui-controlnet/models/control_v11p_sd15_openpose.pth
-	out=config/auto/extensions/sd-webui-controlnet/models/control_v11p_sd15_openpose.pth
-https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/config/auto/extensions/sd-webui-controlnet/models/control_v11p_sd15_scribble.pth
-	out=config/auto/extensions/sd-webui-controlnet/models/control_v11p_sd15_scribble.pth
-https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/config/auto/extensions/sd-webui-controlnet/models/control_v11p_sd15_seg.pth
-	out=config/auto/extensions/sd-webui-controlnet/models/control_v11p_sd15_seg.pth
-https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/config/auto/extensions/sd-webui-controlnet/models/control_v11p_sd15_softedge.pth
-	out=config/auto/extensions/sd-webui-controlnet/models/control_v11p_sd15_softedge.pth
-https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/config/auto/extensions/sd-webui-controlnet/models/t2iadapter_color_sd14v1.pth
-	out=config/auto/extensions/sd-webui-controlnet/models/t2iadapter_color_sd14v1.pth
-https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/config/auto/extensions/sd-webui-controlnet/models/control_v11p_sd15_lineart.pth
-	out=config/auto/extensions/sd-webui-controlnet/models/control_v11p_sd15_lineart.pth

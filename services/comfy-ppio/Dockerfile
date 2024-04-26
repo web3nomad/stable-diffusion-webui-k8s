@@ -6,14 +6,15 @@ FROM pytorch/pytorch:2.0.1-cuda11.7-cudnn8-runtime
 
 ENV DEBIAN_FRONTEND=noninteractive PIP_PREFER_BINARY=1
 
-RUN apt-get update && apt-get install -y git && apt-get clean
-
 RUN --mount=type=cache,target=/var/cache/apt \
   apt-get update && \
   # we need those
   apt-get install -y fonts-dejavu-core rsync git jq moreutils aria2 \
   # extensions needs those
-  ffmpeg libglfw3-dev libgles2-mesa-dev pkg-config libcairo2 libcairo2-dev libsm6 libxext6 build-essential && \
+  ffmpeg libglfw3-dev libgles2-mesa-dev pkg-config \
+  libcairo2 libcairo2-dev libsm6 libxext6 build-essential \
+  # for model checksums
+  parallel && \
   apt-get clean
 
 
@@ -43,12 +44,14 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 
 # add info
 COPY . /docker/
-RUN cp /docker/extra_model_paths.yaml ${ROOT}
+RUN chmod +x /docker/clone.sh
+RUN chmod +x /docker/download.sh
 RUN chmod u+x /docker/entrypoint.sh
 RUN cp /docker/extra_model_paths.yaml ${ROOT}
 
 ENV NVIDIA_VISIBLE_DEVICES=all
 ENV PYTHONPATH="${PYTHONPATH}:${PWD}" CLI_ARGS=""
 EXPOSE 7860
-ENTRYPOINT ["/docker/entrypoint.sh"]
-CMD python -u main.py --listen --port 7860 ${CLI_ARGS}
+
+# ENTRYPOINT ["/docker/entrypoint.sh"]
+# CMD python -u main.py --listen --port 7860 ${CLI_ARGS}
