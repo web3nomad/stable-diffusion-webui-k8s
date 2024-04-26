@@ -1,0 +1,30 @@
+https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/VAE/vae-ft-mse-840000-ema-pruned.ckpt
+  out=models/VAE/vae-ft-mse-840000-ema-pruned.ckpt
+https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/GFPGAN/GFPGANv1.4.pth
+  out=models/GFPGAN/GFPGANv1.4.pth
+https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/RealESRGAN/RealESRGAN_x4plus.pth
+  out=models/RealESRGAN/RealESRGAN_x4plus.pth
+https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/RealESRGAN/RealESRGAN_x4plus_anime_6B.pth
+  out=models/RealESRGAN/RealESRGAN_x4plus_anime_6B.pth
+https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/LDSR/project.yaml
+  out=models/LDSR/project.yaml
+https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/LDSR/model.ckpt
+  out=models/LDSR/model.ckpt
+
+# checkpoints
+https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Stable-diffusion/sd_xl_base_1.0_0.9vae.safetensors
+  out=models/Stable-diffusion/sd_xl_base_1.0_0.9vae.safetensors
+https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Stable-diffusion/sd_xl_refiner_1.0_0.9vae.safetensors
+  out=models/Stable-diffusion/sd_xl_refiner_1.0_0.9vae.safetensors
+https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Stable-diffusion/sd-v1-5-inpainting.ckpt
+  out=models/Stable-diffusion/sd-v1-5-inpainting.ckpt
+https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Stable-diffusion/v1-5-pruned-emaonly.safetensors
+  out=models/Stable-diffusion/v1-5-pruned-emaonly.safetensors
+https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Stable-diffusion/DreamShaper_6_BakedVae.safetensors
+  out=models/Stable-diffusion/DreamShaper_6_BakedVae.safetensors
+
+# Lora
+https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Lora/add_detail.safetensors
+  out=models/Lora/add_detail.safetensors
+https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Lora/lcm-lora-sdv1-5.safetensors
+  out=models/Lora/lcm-lora-sdv1-5.safetensors
