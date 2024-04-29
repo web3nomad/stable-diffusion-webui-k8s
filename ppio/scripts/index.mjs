@@ -52,8 +52,10 @@ function createInstance() {
   myHeaders.append("Content-Type", "application/json");
 
   var raw = JSON.stringify({
-    name: "RTX 3090 24GB",
-    productId: "23",
+    // name: "RTX 3090 24GB",
+    // productId: "23",
+    name: "RTX 4090 24GB",
+    productId: "70",
     gpuNum: 1,
     diskSize: 100,
     billingMode: "afterusage",
@@ -61,8 +63,10 @@ function createInstance() {
     imageAuth: imageAuth,
     ports: "7860",
     envs: [],
-    clusterId: "22",
-    networkStorageId: "fs-B7x768uRvLYJUW4Ev6ijpM",
+    // clusterId: "22",
+    // networkStorageId: "fs-B7x768uRvLYJUW4Ev6ijpM",
+    clusterId: "26",
+    networkStorageId: "fs-oU4n7uWn5D6F4ZtXnaiXPD",
     networkStorageMountPoint: "/data",
   });
 
@@ -80,10 +84,13 @@ function createInstance() {
 }
 
 function main() {
-  // request('https://openapi.paigpu.com/openapi/v1/clusters');
-  // request('https://openapi.paigpu.com/openapi/v1/products?clusterId=22&productName');  // 西北
-  // request('https://openapi.paigpu.com/openapi/v1/images?type=private');
-  // request('https://openapi.paigpu.com/openapi/v1/networkstorages/list');
+  // get('https://openapi.paigpu.com/openapi/v1/clusters'); // 西北 22, 西北二区 26
+  // get('https://openapi.paigpu.com/openapi/v1/products?clusterId=26&productName')
+  //   .then((result) => {
+  //     console.log(result.data.filter((item) => item.availableDeploy))
+  //   });
+  // get('https://openapi.paigpu.com/openapi/v1/images?type=private');
+  // get('https://openapi.paigpu.com/openapi/v1/networkstorages/list');
   createInstance();
 }
 
