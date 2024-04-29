@@ -21,6 +21,8 @@
 ```bash
 cd /docker
 
+apt-get install -y wget parallel
+
 wget https://raw.githubusercontent.com/bmrlab/stable-diffusion-webui-k8s/main/services/comfy/download-script/checksums.sha256
 wget https://raw.githubusercontent.com/bmrlab/stable-diffusion-webui-k8s/main/services/comfy/download-script/clone.sh
 wget https://raw.githubusercontent.com/bmrlab/stable-diffusion-webui-k8s/main/services/comfy/download-script/download.sh
@@ -28,8 +30,6 @@ wget https://raw.githubusercontent.com/bmrlab/stable-diffusion-webui-k8s/main/se
 
 chmod u+x download.sh
 chmod u+x clone.sh
-
-apt-get install parallel
 
 ./download.sh
 ```
