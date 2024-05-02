@@ -54,7 +54,7 @@ export async function post(url, body) {
   var requestOptions = {
     method: "POST",
     headers: myHeaders,
-    body: body,
+    body: JSON.stringify(body),
     redirect: "follow",
   };
 

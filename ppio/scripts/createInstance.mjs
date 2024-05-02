@@ -11,7 +11,7 @@ const instances = {
   },
   "4090": {
     name: "RTX 4090 24GB",
-    productId: "70",
+    productId: "75",
     clusterId: "26",
     networkStorageId: "fs-oU4n7uWn5D6F4ZtXnaiXPD",
   },
@@ -19,7 +19,7 @@ const instances = {
 
 function main() {
   const gpuName = process.argv[2];
-  var body = JSON.stringify({
+  var body = {
     gpuNum: 1,
     diskSize: 100,
     billingMode: "afterusage",
@@ -29,7 +29,7 @@ function main() {
     envs: [],
     networkStorageMountPoint: "/data",
     ...instances[gpuName],
-  });
+  };
 
   post("/v1/gpu/instance/create", body).then(console.log)
 }
