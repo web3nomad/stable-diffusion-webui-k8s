@@ -65,4 +65,100 @@ https://huggingface.co/lllyasviel/misc/resolve/main/xl-to-v1_interposer-v3.1.saf
 https://huggingface.co/lllyasviel/misc/resolve/main/sdxl_lcm_lora.safetensors
     out=models/loras/sdxl_lcm_lora.safetensors
 
+https://civitai.com/api/download/models/451048
+    out=models/loras/bubbly.safetensors
+
+https://static-common.tezign.com/static/hpx0e766581715741489122.safetensors
+    out=models/loras/detailed_perfection.safetensors
+
+https://static-common.tezign.com/static/lgvqdhn6gi1715741493352.safetensors
+    out=models/loras/neon_noir.safetensors
+
+https://civitai.com/api/download/models/487195?type=Model&format=SafeTensor
+    out=models/loras/modern_cartoon.safetensors
+
+https://static-common.tezign.com/static/biredh964z1715741496319.safetensors
+    out=models/loras/eightmountain_ink.safetensors
+
+https://civitai.com/api/download/models/149480?type=Model&format=SafeTensor
+    out=models/loras/ink_painting.safetensors
+
+https://civitai.com/api/download/models/309610?type=Model&format=SafeTensor
+    out=models/loras/wave_3d.safetensors
+
+https://static-common.tezign.com/static/txx9w6dsoo1715827504166.safetensors
+    out=models/loras/helena_style_v0.safetensors
+
+https://static-common.tezign.com/static/sq88btfs1v1715832403459.safetensors
+    out=models/loras/helena_tone_v0.safetensors
+
+https://static-common.tezign.com/static/oq3d545uue1715932562246.safetensors
+    out=models/loras/helena_tone_v1.safetensors
+
+https://static-common.tezign.com/static/r5sv3shq7q1716285502603.safetensors
+    out=models/loras/melting.safetensors
+
+https://static-common.tezign.com/static/pgpxe2d8381716285539951.safetensors
+    out=models/loras/natural_gemstone.safetensors
+
+https://static-common.tezign.com/static/qwhkf91az91716285569639.safetensors
+    out=models/loras/fluffy.safetensors
+
+https://static-common.tezign.com/static/gsvcar9bii1716285575207.safetensors
+    out=models/loras/color_swirl.safetensors
+
+https://static-common.tezign.com/static/lobd2vksdk1716345728854.safetensors
+    out=models/loras/acrylic_drawix.safetensors
+
+https://static-common.tezign.com/static/npbudz7w151716346137960.safetensors
+    out=models/loras/anime_landscape.safetensors
+
+https://static-common.tezign.com/static/j3lr6o718y1716346475673.safetensors
+    out=models/loras/toned_sketch.safetensors
+
+https://static-common.tezign.com/static/h1vfxzb2741716346475671.safetensors
+    out=models/loras/19th_century.safetensors
+
+https://static-common.tezign.com/static/o7a5z61h6r1716346475669.safetensors
+    out=models/loras/m05_intensify.safetensors
+
+https://static-common.tezign.com/static/0w5pt59qvo1716346475667.safetensors
+    out=models/loras/podkowinski_impressionist.safetensors
+
+https://static-common.tezign.com/static/kjl49ougxp1716347703269.safetensors
+    out=models/loras/minimalist_sculpture.safetensors
+
+https://static-common.tezign.com/static/ye2u3to2jv1716349662348.safetensors
+    out=models/loras/scifi_cinematic.safetensors
+
+https://static-common.tezign.com/static/zgd3qkgpin1716355671516.safetensors
+    out=models/loras/submerged_ruins.safetensors
+
+https://static-common.tezign.com/static/fbyf26b4471716367585064.safetensors
+    out=models/loras/eldritch_comics.safetensors
+
+https://static-common.tezign.com/static/3tbqesaped1716367585067.safetensors
+    out=models/loras/chinese_illustration.safetensors
+
+https://static-common.tezign.com/static/7z3nbewvxv1716367585069.safetensors
+    out=models/loras/textured_paint.safetensors
+
+https://static-common.tezign.com/static/zs5u3glgm91716367585072.safetensors
+    out=models/loras/opal.safetensors
+
+https://static-common.tezign.com/static/7m0ghidn3d1716367585075.safetensors
+    out=models/loras/abandoned.safetensors
+
+https://static-common.tezign.com/static/33vhgezgzk1716367585078.safetensors
+    out=models/loras/lenticular_effect.safetensors
+
+https://static-common.tezign.com/static/geevo7ezaw1716528739151.safetensors
+    out=models/loras/female_nobodies.safetensors
+
+https://static-common.tezign.com/static/lfuxrtx0gg1716528967435.safetensors
+    out=models/loras/hands.safetensors
+
+https://civitai.com/api/download/models/260168
+    out=models/loras/studio_lighting.safetensors
+
 # aria2c -x 10 --disable-ipv6 --input-file /docker/links.txt --dir /data --continue
