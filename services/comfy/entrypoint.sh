@@ -2,12 +2,12 @@
 
 set -Eeuo pipefail
 
-mkdir -vp /data/config/comfy/custom_nodes
+mkdir -vp /data/comfy/config/custom_nodes
 
 declare -A MOUNTS
 
-MOUNTS["/root/.cache"]="/data/.cache"
-MOUNTS["${ROOT}/input"]="/data/config/comfy/input"
+MOUNTS["/root/.cache"]="/data/comfy/.cache"
+MOUNTS["${ROOT}/input"]="/data/comfy/config/input"
 MOUNTS["${ROOT}/output"]="/output/comfy"
 
 for to_path in "${!MOUNTS[@]}"; do
@@ -22,9 +22,9 @@ for to_path in "${!MOUNTS[@]}"; do
   echo Mounted $(basename "${from_path}")
 done
 
-if [ -f "/data/config/comfy/startup.sh" ]; then
+if [ -f "/data/comfy/config/startup.sh" ]; then
   pushd ${ROOT}
-  . /data/config/comfy/startup.sh
+  . /data/comfy/config/startup.sh
   popd
 fi
 

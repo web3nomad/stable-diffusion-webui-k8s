@@ -21,7 +21,7 @@
 ```bash
 cd /docker
 
-apt-get install -y wget parallel
+apt-get install -y wget aria2 parallel
 
 wget https://raw.githubusercontent.com/bmrlab/stable-diffusion-webui-k8s/main/services/comfy/download-script/checksums.sha256
 wget https://raw.githubusercontent.com/bmrlab/stable-diffusion-webui-k8s/main/services/comfy/download-script/clone.sh
