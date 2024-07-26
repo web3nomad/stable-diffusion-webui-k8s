@@ -2,7 +2,9 @@ FROM pytorch/pytorch:2.3.0-cuda12.1-cudnn8-runtime
 
 ENV DEBIAN_FRONTEND=noninteractive PIP_PREFER_BINARY=1
 
-RUN apt-get update && apt-get install -y git && apt-get clean
+RUN apt-get update && \
+  apt-get install -y git aria2 parallel ffmpeg libsm6 libxext6 && \
+  apt-get clean
 
 ENV ROOT=/stable-diffusion
 RUN --mount=type=cache,target=/root/.cache/pip \
@@ -15,6 +17,10 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 WORKDIR ${ROOT}
 COPY . /docker/
 RUN chmod u+x /docker/entrypoint.sh && cp /docker/extra_model_paths.yaml ${ROOT}
+
+# install additional requirements for custom nodes
+RUN --mount=type=cache,target=/root/.cache/pip \
+  pip install -r /docker/download-script/requirements.txt
 
 ENV NVIDIA_VISIBLE_DEVICES=all PYTHONPATH="${PYTHONPATH}:${PWD}" CLI_ARGS=""
 EXPOSE 7860
