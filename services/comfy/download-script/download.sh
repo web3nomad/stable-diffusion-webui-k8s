@@ -25,6 +25,7 @@ echo "Clone the repositories of custom nodes..."
 # ./clone.sh ComfyUI-Manager https://github.com/ltdrdata/ComfyUI-Manager.git 1577682fb9a61f413fe28e8e3899c45f6d52a866
 ./clone.sh rgthree-comfy https://github.com/rgthree/rgthree-comfy.git 2613da28c639b90b310e35c6ffde9ee0a3d60bfe
 ./clone.sh comfyui-mixlab-nodes https://github.com/shadowcz007/comfyui-mixlab-nodes.git 6d004c61fc3d971375fde6a428e9ec88dbe15e2d
+./clone.sh ComfyUI_IPAdapter_plus https://github.com/cubiq/ComfyUI_IPAdapter_plus.git df8c78b6bfe8450bdeed1209dfb3f94c9c59773a
 
 echo "Downloading, this might take a while..."
 
