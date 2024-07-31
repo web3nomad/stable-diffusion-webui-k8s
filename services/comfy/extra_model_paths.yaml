@@ -1,6 +1,6 @@
-comfyui:
+a111:
   base_path: /data/comfy
-
+  
   checkpoints: models/Stable-diffusion
   configs: models/Stable-diffusion
   vae: models/VAE
@@ -18,22 +18,9 @@ comfyui:
   embeddings: embeddings
 
   custom_nodes: config/custom_nodes
-
   # TODO: I am unsure about these, need more testing
   # style_models: config/style_models
   # t2i_adapter: config/t2i_adapter
   clip_vision: config/clip_vision
   ipadapter: config/ipadapter
   # diffusers: config/diffusers
-
-a111:
-  base_path: /data/models
-  checkpoints: /data/models/checkpoints/
-  clip: /data/models/clip/
-  clip_vision: /data/models/clip_vision/
-  configs: /data/models/configs/
-  controlnet: /data/models/controlnet/
-  embeddings: /data/models/embeddings/
-  loras: /data/models/loras/
-  upscale_models: /data/models/upscale_models/
-  vae: /data/models/vae/
