@@ -1,4 +1,4 @@
-a111:
+comfyui:
   base_path: /data/comfy
 
   checkpoints: models/Stable-diffusion
@@ -14,6 +14,7 @@ a111:
   controlnet: models/ControlNet
   gligen: models/GLIGEN
   clip: models/CLIPEncoder
+  inpaint: models/Inpaint
   embeddings: embeddings
 
   custom_nodes: config/custom_nodes
@@ -24,3 +25,15 @@ a111:
   clip_vision: config/clip_vision
   ipadapter: config/ipadapter
   # diffusers: config/diffusers
+
+a111:
+  base_path: /data/models
+  checkpoints: /data/models/checkpoints/
+  clip: /data/models/clip/
+  clip_vision: /data/models/clip_vision/
+  configs: /data/models/configs/
+  controlnet: /data/models/controlnet/
+  embeddings: /data/models/embeddings/
+  loras: /data/models/loras/
+  upscale_models: /data/models/upscale_models/
+  vae: /data/models/vae/
