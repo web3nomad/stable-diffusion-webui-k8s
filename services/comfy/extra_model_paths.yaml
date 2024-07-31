@@ -1,6 +1,6 @@
 a111:
   base_path: /data/comfy
-  
+
   checkpoints: models/Stable-diffusion
   configs: models/Stable-diffusion
   vae: models/VAE
@@ -15,12 +15,13 @@ a111:
   gligen: models/GLIGEN
   clip: models/CLIPEncoder
   inpaint: models/Inpaint
+  clip_vision: models/clip_vision
+  ipadapter: models/ipadapter
   embeddings: embeddings
 
   custom_nodes: config/custom_nodes
   # TODO: I am unsure about these, need more testing
   # style_models: config/style_models
   # t2i_adapter: config/t2i_adapter
-  clip_vision: config/clip_vision
-  ipadapter: config/ipadapter
+ 
   # diffusers: config/diffusers
