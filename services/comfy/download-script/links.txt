@@ -15,15 +15,27 @@ https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/LDSR
 https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/random_mask_brushnet_ckpt_sdxl_v0/diffusion_pytorch_model.safetensors
   out=models/Inpaint/brushnet_xl/random_mask.safetensors
 
+https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/segmentation_mask_brushnet_ckpt_sdxl_v1/segmentation_mask.safetensors
+  out=models/Inpaint/brushnet_xl/segmentation_mask.safetensors
+
 https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/random_mask_brushnet_ckpt_sdxl_v0/config.json
   out=models/Inpaint/brushnet_xl/config.json
 
+https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/pytorch_model.bin
+  out=models/Inpaint/powerpaint/pytorch_model.bin
+
+https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/powerpaint_v2.safetensors
+  out=models/Inpaint/powerpaint/powerpaint_v2.safetensors
+
+https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/model.fp16.safetensors
+  out=models/CLIPEncoder/model.fp16.safetensors
+
 # Clip-Vision
 https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors
-  out=models/clip_vision/CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors
+  out=config/clip_vision/CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors
 
 https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors
-  out=models/clip_vision/CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors
+  out=config/clip_vision/CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors
 
 # checkpoints
 https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Stable-diffusion/sd_xl_base_1.0_0.9vae.safetensors
@@ -39,10 +51,12 @@ https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Stab
 
 # IPAdapter
 https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/ip-adapter_sdxl.safetensors
-  out=models/ipadapter/ip-adapter_sdxl.safetensors
-https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/ip-adapter_sdxl_vit-h.safetensors
-  out=models/ipadapter/ip-adapter_sdxl_vit-h.safetensors
+  out=config/ipadapter/ip-adapter_sdxl.safetensors
 
 # Lora
+https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Lora/add_detail.safetensors
+  out=models/Lora/add_detail.safetensors
+https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Lora/lcm-lora-sdv1-5.safetensors
+  out=models/Lora/lcm-lora-sdv1-5.safetensors
 
 # aria2c -x 10 --disable-ipv6 --input-file /docker/download-script/links.txt --dir /data/comfy --continue
