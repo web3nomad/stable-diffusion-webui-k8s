@@ -17,12 +17,13 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 WORKDIR ${ROOT}
 COPY . /docker/
 RUN chmod u+x /docker/entrypoint.sh && cp /docker/extra_model_paths.yaml ${ROOT}
-
+RUN chmod u+x /docker/download-script/download.sh
+RUN chmod u+x /docker/download-script/clone.sh
 # install additional requirements for custom nodes
 RUN --mount=type=cache,target=/root/.cache/pip \
   pip install -r /docker/download-script/requirements.txt
 
-ENV NVIDIA_VISIBLE_DEVICES=all PYTHONPATH="${PYTHONPATH}:${PWD}" CLI_ARGS=""
+ENV NVIDIA_VISIBLE_DEVICES=all PYTHONPATH="${PYTHONPATH}:${PWD}" CLI_ARGS="--preview-method auto"
 EXPOSE 7860
 ENTRYPOINT ["/docker/entrypoint.sh"]
 CMD python -u main.py --listen --port 7860 ${CLI_ARGS}

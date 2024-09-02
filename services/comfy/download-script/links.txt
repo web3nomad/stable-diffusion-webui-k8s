@@ -32,10 +32,14 @@ https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/model.fp16.safetensors
 
 # Clip-Vision
 https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors
-  out=config/clip_vision/CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors
+  out=models/clip_vision/CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors
 
 https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors
-  out=config/clip_vision/CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors
+  out=models/clip_vision/CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors
+
+# Controlnets
+https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/controlnet-canny-sdxl-1.0_V2.safetensors
+  out=models/ControlNet/controlnet-canny-sdxl-1.0_V2.safetensors
 
 # checkpoints
 https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Stable-diffusion/sd_xl_base_1.0_0.9vae.safetensors
@@ -48,10 +52,14 @@ https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Stab
   out=models/Stable-diffusion/v1-5-pruned-emaonly.safetensors
 https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Stable-diffusion/DreamShaper_6_BakedVae.safetensors
   out=models/Stable-diffusion/DreamShaper_6_BakedVae.safetensors
+https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/dam_kvision.safetensors
+  out=models/Stable-diffusion/dam_kvision.safetensors
 
 # IPAdapter
 https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/ip-adapter_sdxl.safetensors
-  out=config/ipadapter/ip-adapter_sdxl.safetensors
+  out=models/ipadapter/ip-adapter_sdxl.safetensors
+https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/ip-adapter-plus_sdxl_vit-h.safetensors
+  out=models/ipadapter/ip-adapter-plus_sdxl_vit-h.safetensors
 
 # Lora
 https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Lora/add_detail.safetensors

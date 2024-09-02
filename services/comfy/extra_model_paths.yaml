@@ -18,6 +18,7 @@ a111:
   clip_vision: models/clip_vision
   ipadapter: models/ipadapter
   embeddings: embeddings
+  lama: models/lama
 
   custom_nodes: config/custom_nodes
   # TODO: I am unsure about these, need more testing
