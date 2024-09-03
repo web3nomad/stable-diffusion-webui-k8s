@@ -48,12 +48,10 @@ https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Stab
   out=models/Stable-diffusion/sd_xl_refiner_1.0_0.9vae.safetensors
 https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Stable-diffusion/sd-v1-5-inpainting.ckpt
   out=models/Stable-diffusion/sd-v1-5-inpainting.ckpt
-https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Stable-diffusion/v1-5-pruned-emaonly.safetensors
-  out=models/Stable-diffusion/v1-5-pruned-emaonly.safetensors
-https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Stable-diffusion/DreamShaper_6_BakedVae.safetensors
-  out=models/Stable-diffusion/DreamShaper_6_BakedVae.safetensors
 https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/dam_kvision.safetensors
   out=models/Stable-diffusion/dam_kvision.safetensors
+https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/epicphotogasm_ultimateFidelity.safetensors
+  out=models/Stable-diffusion/epicphotogasm_ultimateFidelity.safetensors
 
 # IPAdapter
 https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/ip-adapter_sdxl.safetensors
