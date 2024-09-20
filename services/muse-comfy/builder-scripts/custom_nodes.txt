@@ -1,0 +1,3 @@
+https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet 74d0c56ab3ba69663281390cc1b2072107939f96
+https://github.com/cubiq/ComfyUI_IPAdapter_plus 20bfeb6db930e3d1528bc7df0fbd5a14f6253719
+https://github.com/Fannovel16/comfyui_controlnet_aux.git 302a3891d15b4285d9c9e0a00f4d8daa2eb46f25

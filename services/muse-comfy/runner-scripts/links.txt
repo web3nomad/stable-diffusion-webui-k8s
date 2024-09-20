@@ -1,0 +1,108 @@
+# checkpoints
+
+https://huggingface.co/black-forest-labs/FLUX.1-dev/resolve/main/flux1-dev.safetensors?download=true
+  out=models/unet/flux1-dev.safetensors
+
+# [sd1.5] 真实风人物场景画师
+https://musedam-assets.oss-cn-beijing.aliyuncs.com/muse_sd_model/checkpoints/level4_v50BakedVAEFp16.safetensors
+# [sd1.5] 原画厚涂画师
+https://musedam-assets.oss-cn-beijing.aliyuncs.com/muse_sd_model/checkpoints/samdoesartsUltmerge_v1.ckpt
+# SD1.5
+https://musedam-assets.oss-cn-beijing.aliyuncs.com/muse_sd_model/checkpoints/v1-5-pruned-emaonly.fp16.safetensors
+# [sd1.5] ReV Animated
+https://musedam-assets.oss-cn-beijing.aliyuncs.com/muse_sd_model/checkpoints/revAnimated_v2Rebirth.safetensors
+# [sd1.5] 麦橘写实
+https://musedam-assets.oss-cn-beijing.aliyuncs.com/muse_sd_model/checkpoints/majicmixRealistic_v7.safetensors
+# [sd1.5] 动漫游戏 CG 风
+https://musedam-assets.oss-cn-beijing.aliyuncs.com/muse_sd_model/checkpoints/dayFrontDiffusion_dfdV1.safetensors
+
+# CLIP
+
+https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/clip_l.safetensors?download=true
+  out=models/clip/clip_l.safetensors
+
+https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp8_e4m3fn.safetensors?download=true
+  out=models/clip/t5xxl_fp8_e4m3fn.safetensors
+
+# controlnets
+
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_canny.pth?download=true
+  out=models/controlnet/control_v11p_sd15_canny.pth
+
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_scribble.pth?download=true
+  out=models/controlnet/control_v11p_sd15_scribble.pth
+
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_normalbae.pth?download=true
+  out=models/controlnet/control_v11p_sd15_normalbae.pth
+
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_lineart.pth?download=true
+  out=models/controlnet/control_v11p_sd15_lineart.pth
+
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_mlsd.pth?download=true
+  out=models/controlnet/control_v11p_sd15_mlsd.pth
+
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_seg.pth?download=true
+  out=models/controlnet/control_v11p_sd15_seg.pth
+
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_softedge.pth?download=true
+  out=models/controlnet/control_v11p_sd15_softedge.pth
+
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_openpose.pth?download=true
+  out=models/controlnet/control_v11p_sd15_openpose.pth
+
+https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1p_sd15_depth.pth?download=true
+  out=models/controlnet/control_v11f1p_sd15_depth.pth
+
+https://huggingface.co/TencentARC/T2I-Adapter/resolve/main/models/t2iadapter_color_sd14v1.pth?download=true
+  out=models/controlnet/t2iadapter_color_sd14v1.pth
+
+https://huggingface.co/monster-labs/control_v1p_sd15_qrcode_monster/resolve/main/v2/control_v1p_sd15_qrcode_monster_v2.safetensors?download=true
+  out=models/controlnet/control_v1p_sd15_qrcode_monster_v2.safetensors
+
+https://huggingface.co/XLabs-AI/flux-controlnet-collections/resolve/main/flux-canny-controlnet-v3.safetensors?download=true
+  out=models/controlnet/flux-canny-controlnet-v3.safetensors
+
+# controlnet annotators
+
+# M-LSD
+https://huggingface.co/lllyasviel/Annotators/resolve/main/mlsd_large_512_fp32.pth?download=true
+  out=models/controlnet_aux/lllyasviel/Annotators/mlsd_large_512_fp32.pth
+
+# HED
+https://huggingface.co/lllyasviel/Annotators/resolve/main/ControlNetHED.pth?download=true
+  out=models/controlnet_aux/lllyasviel/Annotators/ControlNetHED.pth
+
+# Medias Depth
+https://huggingface.co/lllyasviel/Annotators/resolve/main/dpt_hybrid-midas-501f0c75.pt?download=true
+  out=models/controlnet_aux/lllyasviel/Annotators/
+
+# Normal
+https://huggingface.co/lllyasviel/Annotators/resolve/main/scannet.pt?download=true
+  out=models/controlnet_aux/lllyasviel/Annotators/scannet.pt
+
+# Seg
+https://huggingface.co/lllyasviel/Annotators/resolve/main/upernet_global_small.pth?download=true
+  out=models/controlnet_aux/lllyasviel/Annotators/
+
+# open pose - body
+https://huggingface.co/lllyasviel/Annotators/resolve/main/body_pose_model.pth?download=true
+  out=models/controlnet_aux/lllyasviel/Annotators/body_pose_model.pth
+
+# open pose - hand
+https://huggingface.co/lllyasviel/Annotators/resolve/main/hand_pose_model.pth?download=true
+  out=models/controlnet_aux/lllyasviel/Annotators/
+
+# open pose - face
+https://huggingface.co/lllyasviel/Annotators/resolve/main/facenet.pth?download=true
+  out=models/controlnet_aux/lllyasviel/Annotators/
+
+# IPAdapter
+
+# LoRAs
+
+# vae
+
+https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/main/ae.safetensors?download=true
+  out=models/vae/ae.safetensors
+
+# aria2c -x 10 --disable-ipv6 --input-file /docker/runner-scripts/links.txt --dir /data --continue
