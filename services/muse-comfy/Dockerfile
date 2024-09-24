@@ -42,7 +42,7 @@ COPY ./runner-scripts /docker/runner-scripts
 
 # get comfy-router
 RUN wget -O /app/comfy-router \
-  https://github.com/bmrlab/comfy-router/releases/download/v0.1.3/comfy-router-x86_64-unknown-linux-gnu && \
+  https://github.com/bmrlab/comfy-router/releases/download/v0.2.0/comfy-router-x86_64-unknown-linux-gnu && \
   chmod +x /app/comfy-router
 
 RUN chmod +x /docker/entrypoint.sh
