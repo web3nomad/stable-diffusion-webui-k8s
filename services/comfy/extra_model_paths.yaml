@@ -19,6 +19,7 @@ a111:
   ipadapter: models/ipadapter
   embeddings: embeddings
   lama: models/lama
+  unet: models/unet
 
   custom_nodes: config/custom_nodes
   # TODO: I am unsure about these, need more testing

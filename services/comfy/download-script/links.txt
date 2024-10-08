@@ -11,6 +11,19 @@ https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/LDSR
 https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/LDSR/model.ckpt
   out=models/LDSR/model.ckpt
 
+# Misc
+## Depth Anything 2
+https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/DepthAnything/depth_anything_v2_vitl.pth
+  out=config/custom_nodes/comfyui_controlnet_aux/ckpts/depth-anything/Depth-Anything-V2-Large/depth_anything_v2_vitl.pth
+## ControlNet Annotator
+https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/Annotator/sk_model.pth
+  out=config/custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/sk_model.pth
+https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/Annotator/sk_model2.pth
+  out=config/custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/sk_model2.pth
+## AnyLine
+https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/AnyLine/MTEED.pth
+  out=config/custom_nodes/comfyui_controlnet_aux/ckpts/TheMistoAI/MistoLine/Anyline/MTEED.pth
+
 # BrushNet
 https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/random_mask_brushnet_ckpt_sdxl_v0/diffusion_pytorch_model.safetensors
   out=models/Inpaint/brushnet_xl/random_mask.safetensors
@@ -30,6 +43,13 @@ https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/powerpaint_v2.safetensors
 https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/model.fp16.safetensors
   out=models/CLIPEncoder/model.fp16.safetensors
 
+# IC Light
+https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/iclight_sd15_fbc.safetensors
+  out=models/unet/iclight_sd15_fbc.safetensors
+
+https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/iclight_sd15_fc.safetensors
+  out=models/unet/iclight_sd15_fc.safetensors
+
 # Clip-Vision
 https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors
   out=models/clip_vision/CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors
@@ -40,6 +60,8 @@ https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/CLIP-ViT-H-14-laion2B-s32B
 # Controlnets
 https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/controlnet-canny-sdxl-1.0_V2.safetensors
   out=models/ControlNet/controlnet-canny-sdxl-1.0_V2.safetensors
+https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/controlnet_sd15_canny.safetensors
+  out=models/ControlNet/controlnet_sd15_canny.safetensors
 
 # checkpoints
 https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Stable-diffusion/sd_xl_base_1.0_0.9vae.safetensors
@@ -58,11 +80,9 @@ https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/ip-adapter_sdxl.safetensor
   out=models/ipadapter/ip-adapter_sdxl.safetensors
 https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/ip-adapter-plus_sdxl_vit-h.safetensors
   out=models/ipadapter/ip-adapter-plus_sdxl_vit-h.safetensors
+https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/ip-adapter-plus_sd15.safetensors
+  out=models/ipadapter/ip-adapter-plus_sd15.safetensors
 
 # Lora
-https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Lora/add_detail.safetensors
-  out=models/Lora/add_detail.safetensors
-https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Lora/lcm-lora-sdv1-5.safetensors
-  out=models/Lora/lcm-lora-sdv1-5.safetensors
 
 # aria2c -x 10 --disable-ipv6 --input-file /docker/download-script/links.txt --dir /data/comfy --continue

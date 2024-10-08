@@ -12,6 +12,7 @@ mkdir -vp \
   /data/comfy/models/LDSR \
   /data/comfy/models/VAE \
   /data/comfy/models/ControlNet \
+  /data/comfy/models/unet \
 
 echo "Updating ComfyUI..."
 cd /stable-diffusion
@@ -33,6 +34,12 @@ echo "Clone the repositories of custom nodes..."
 ./clone.sh ComfyUI_IPAdapter_plus https://github.com/owenrao/ComfyUI_IPAdapter_plus.git 8cde9c212b37df7e90a290c26c7fc578ea20e143 # Made customization through forking, pull request not yet replied by the author
 ./clone.sh ComfyUI_LayerStyle https://github.com/chflame163/ComfyUI_LayerStyle.git c4368ba7352d4bf0de5bf3d349e525ea2d6abf2a
 ./clone.sh ComfyUI-KJNodes https://github.com/kijai/ComfyUI-KJNodes.git 7aa591b3a64a3f83ec2c3e92758d0bb0926a6fe0
+./clone.sh ComfyUI-IC-Light-Native https://github.com/huchenlei/ComfyUI-IC-Light-Native.git cdc61bc84445a5c48144e33907eabf96bdf2dd52
+./clone.sh ComfyUI-IC-Light https://github.com/kijai/ComfyUI-IC-Light.git 8a9f9c92c155e754a05840c7621443c5919a9b25
+./clone.sh comfyui_controlnet_aux https://github.com/Fannovel16/comfyui_controlnet_aux/ 302a3891d15b4285d9c9e0a00f4d8daa2eb46f25
+./clone.sh was-node-suite-comfyui https://github.com/WASasquatch/was-node-suite-comfyui.git df5133b59adf9b4c3841633462ce8ed900118647
+./clone.sh comfyUI_FrequencySeparation_RGB-HSV https://github.com/risunobushi/comfyUI_FrequencySeparation_RGB-HSV.git 67a08c55ee6aa8e9140616f01497bd54d3533fa6
+./clone.sh ComfyUI-Image-Filters https://github.com/spacepxl/ComfyUI-Image-Filters.git 8ba3fbd46c9ee17553717b4d18aed1a7da37d38d
 
 echo "Downloading, this might take a while..."
 
