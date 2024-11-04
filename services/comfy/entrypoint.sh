@@ -11,6 +11,9 @@ MOUNTS["${ROOT}/input"]="/data/comfy/config/input"
 MOUNTS["${ROOT}/output"]="/output/comfy"
 MOUNTS["${ROOT}/models/inpaint"]="/data/comfy/models/Inpaint"
 MOUNTS["${ROOT}/models/lama"]="/data/lama-eraser-api"
+MOUNTS["${ROOT}/models/sams"]="/data/comfy/models/sams"
+MOUNTS["${ROOT}/models/bert-base-uncased"]="/data/comfy/models/bert-base-uncased"
+MOUNTS["${ROOT}/models/grounding-dino"]="/data/comfy/models/grounding-dino"
 
 for to_path in "${!MOUNTS[@]}"; do
   set -Eeuo pipefail

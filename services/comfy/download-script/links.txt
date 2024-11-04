@@ -1,16 +1,3 @@
-https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/VAE/vae-ft-mse-840000-ema-pruned.ckpt
-  out=models/VAE/vae-ft-mse-840000-ema-pruned.ckpt
-https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/GFPGAN/GFPGANv1.4.pth
-  out=models/GFPGAN/GFPGANv1.4.pth
-https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/RealESRGAN/RealESRGAN_x4plus.pth
-  out=models/RealESRGAN/RealESRGAN_x4plus.pth
-https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/RealESRGAN/RealESRGAN_x4plus_anime_6B.pth
-  out=models/RealESRGAN/RealESRGAN_x4plus_anime_6B.pth
-https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/LDSR/project.yaml
-  out=models/LDSR/project.yaml
-https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/LDSR/model.ckpt
-  out=models/LDSR/model.ckpt
-
 # Misc
 ## Depth Anything 2
 https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/DepthAnything/depth_anything_v2_vitl.pth
@@ -23,6 +10,25 @@ https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/Annotator/sk_model2.pth
 ## AnyLine
 https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/AnyLine/MTEED.pth
   out=config/custom_nodes/comfyui_controlnet_aux/ckpts/TheMistoAI/MistoLine/Anyline/MTEED.pth
+## GroundingDINO
+https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/grounding_dino/groundingdino_swinb_cogcoor.pth
+  out=models/grounding-dino/groundingdino_swinb_cogcoor.pth
+https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/grounding_dino/GroundingDINO_SwinB.cfg.py
+  out=models/grounding-dino/GroundingDINO_SwinB.cfg.py
+## Bert 
+https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/bert-base-uncased/config.json
+  out=models/bert-base-uncased/config.json
+https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/bert-base-uncased/model.safetensors
+  out=models/bert-base-uncased/model.safetensors
+https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/bert-base-uncased/tokenizer.json
+  out=models/bert-base-uncased/tokenizer.json
+https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/bert-base-uncased/tokenizer_config.json
+  out=models/bert-base-uncased/tokenizer_config.json
+https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/bert-base-uncased/vocab.txt
+  out=models/bert-base-uncased/vocab.txt
+## SAM
+https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/sams/sam_hq_vit_h.pth
+  out=models/sams/sam_hq_vit_h.pth
 
 # BrushNet
 https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/random_mask_brushnet_ckpt_sdxl_v0/diffusion_pytorch_model.safetensors
@@ -68,12 +74,12 @@ https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Stab
   out=models/Stable-diffusion/sd_xl_base_1.0_0.9vae.safetensors
 https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Stable-diffusion/sd_xl_refiner_1.0_0.9vae.safetensors
   out=models/Stable-diffusion/sd_xl_refiner_1.0_0.9vae.safetensors
-https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Stable-diffusion/sd-v1-5-inpainting.ckpt
-  out=models/Stable-diffusion/sd-v1-5-inpainting.ckpt
 https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/dam_kvision.safetensors
   out=models/Stable-diffusion/dam_kvision.safetensors
 https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/epicphotogasm_ultimateFidelity.safetensors
   out=models/Stable-diffusion/epicphotogasm_ultimateFidelity.safetensors
+https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/flux1-schnell-fp8.safetensors
+  out=models/unet/flux1-schnell-fp8.safetensors
 
 # IPAdapter
 https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/ip-adapter_sdxl.safetensors
@@ -82,7 +88,5 @@ https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/ip-adapter-plus_sdxl_vit-h
   out=models/ipadapter/ip-adapter-plus_sdxl_vit-h.safetensors
 https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/ip-adapter-plus_sd15.safetensors
   out=models/ipadapter/ip-adapter-plus_sd15.safetensors
-
-# Lora
 
 # aria2c -x 10 --disable-ipv6 --input-file /docker/download-script/links.txt --dir /data/comfy --continue

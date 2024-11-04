@@ -3,7 +3,9 @@ a111:
 
   checkpoints: models/Stable-diffusion
   configs: models/Stable-diffusion
-  vae: models/VAE
+  vae: |
+    models/VAE
+    /data/models/vae
   loras: models/Lora
   upscale_models: |
     models/RealESRGAN
@@ -13,7 +15,9 @@ a111:
   hypernetworks: models/hypernetworks
   controlnet: models/ControlNet
   gligen: models/GLIGEN
-  clip: models/CLIPEncoder
+  clip: |
+    models/CLIPEncoder
+    /data/models/clip
   inpaint: models/Inpaint
   clip_vision: models/clip_vision
   ipadapter: models/ipadapter
