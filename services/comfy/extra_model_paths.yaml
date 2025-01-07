@@ -24,6 +24,7 @@ a111:
   embeddings: embeddings
   lama: models/lama
   unet: models/unet
+  style_models: models/style_models
 
   custom_nodes: config/custom_nodes
   # TODO: I am unsure about these, need more testing

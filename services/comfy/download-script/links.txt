@@ -7,6 +7,8 @@ https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/Annotator/sk_model.pth
   out=config/custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/sk_model.pth
 https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/Annotator/sk_model2.pth
   out=config/custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/sk_model2.pth
+https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/Annotator/ControlNetHED.pth
+  out=config/custom_nodes/comfyui_controlnet_aux/ckpts/lllyasviel/Annotators/ControlNetHED.pth
 ## AnyLine
 https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/AnyLine/MTEED.pth
   out=config/custom_nodes/comfyui_controlnet_aux/ckpts/TheMistoAI/MistoLine/Anyline/MTEED.pth
@@ -62,12 +64,22 @@ https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/CLIP-ViT-bigG-14-laion2B-3
 
 https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors
   out=models/clip_vision/CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors
+  
+https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/siglip-so400m-patch14-384/model.safetensors
+  out=models/clip_vision/siglip-so400m-patch14-384/model.safetensors
+
 
 # Controlnets
 https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/controlnet-canny-sdxl-1.0_V2.safetensors
   out=models/ControlNet/controlnet-canny-sdxl-1.0_V2.safetensors
 https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/controlnet_sd15_canny.safetensors
   out=models/ControlNet/controlnet_sd15_canny.safetensors
+https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/controlnet/flux/flux-hed-controlnet-v3.safetensors
+  out=models/ControlNet/flux/flux-hed-controlnet-v3.safetensors
+
+# Style models
+https://pubtezign.oss-cn-beijing.aliyuncs.com/comfyui/flux1-redux-dev.safetensors
+  out=models/style_models/flux1-redux-dev.safetensors
 
 # checkpoints
 https://pubtezign.oss-cn-beijing.aliyuncs.com/stable-diffusion-webui/models/Stable-diffusion/sd_xl_base_1.0_0.9vae.safetensors
